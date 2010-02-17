@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>TimeDJ</title>
+<style type="text/css">
+div.Title {
+ text-align: center;
+ font-size:50px;
+ font-variant:small-caps;
+ position:relative;
+ top:10px;
+}
+div.Body {
+ text-align: center;
+ font-size:14.5px;
+ position:relative;
+ top:5px;
+ color: silver;
+ } 
+div.DimText {
+ color: silver;
+ text-align: left;
+ }
+hr {margin-left: 50;
+    margin-right: 50;
+    width: 90%
+    }
+ 
+ 
+ }
+</style>
+</head>
+
+<body>
+<div class="Title"/>TimeDJ</div><BR>
+<HR>
+<div class="Body">
+	<BR><BR>
+
+<% mystring = "Dump of db = " %>
+<% @cities.each do |city| %>
+<% mystring = mystring + city.name + ","+ city.country.name + "," %>
+<% end %>
+<%= mystring %>
+
+<input tabindex="0" name="Entry" value= "Eg:  San Francisco; Thailand; LON; GMT" size=65> -->
+<button value="action" name="action">GO!</button><br>
+</div>
+
+<div class="Body" class="DimText"> Type the City, Country, Time Zone or Airport Codes 
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=bumblebeejuice" class="addthis_button_compact">Share</a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=bumblebeejuice"></script>
+<!-- AddThis Button END -->
+
+
+
+</div>
+
+
+</body></html>
