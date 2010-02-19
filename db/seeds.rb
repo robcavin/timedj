@@ -7,6 +7,8 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 countries = Country.create([{ :name => 'USA' }, { :name => 'Japan' }, { :name => 'India' }])
-City.create(:name => 'San Francisco', :country => countries.find(:conditions => { :name => 'India' }).first )
-City.create(:name => 'New York', :country => countries.find(:conditions => { :name => 'USA' }).first )
-City.create(:name => 'Tokyo', :country => countries.find(:conditions => { :name => 'Japan' }).first )
+City.create(:name => 'San Francisco', :country => Country.find(:first, :conditions => { :name => 'India' }) )
+City.create(:name => 'New York', :country => Country.find(:first, :conditions => { :name => 'USA' }) )
+City.create(:name => 'Tokyo', :country => Country.find(:first, :conditions => "name = 'Japan'") )
+
+City.update(City.find(:first, :conditions => "name = 'San Francisco'"), :country => Country.find(:first, :conditions => { :name => 'USA' }))
