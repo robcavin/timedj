@@ -30,6 +30,7 @@ hr {margin-left: 50;
  
  }
 </style>
+<%= javascript_include_tag :defaults %>
 </head>
 
 <body>
@@ -38,17 +39,12 @@ hr {margin-left: 50;
 <div class="Body">
 	<BR><BR>
 
-<% mystring = "Dump of db = " %>
-<% @cities.each do |city| %>
-<% mystring = mystring + city.name + ","+ city.country.name + "," %>
-<% end %>
-<%= mystring %>
-
-<input tabindex="0" name="Entry" value= "Eg:  San Francisco; Thailand; LON; GMT" size=65> -->
+<%= text_field_with_auto_complete :city, :name, 
+	{:tabindex => 0, :size => 65, :value => "Eg:  San Francisco; Thailand; LON; GMT"}, {:method => :get} %>
 <button value="action" name="action">GO!</button><br>
 </div>
 
-<div class="Body" class="DimText"> Type the City, Country, Time Zone or Airport Codes 
+<div class="Body" class="DimText"> Type the City, Country, Time Zone or Airport Codes </div>
 
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style">
