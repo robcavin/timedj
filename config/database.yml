@@ -18,10 +18,10 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: TimeDJ_development
+  database: timedj_dev
   pool: 5
-  username: root
-  password:
+  username: timedj
+  password: Wg45GSDy4sr
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -31,18 +31,18 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: TimeDJ_test
+  database: timedj_test
   pool: 5
-  username: root
-  password:
+  username: timedj
+  password: Wg45GSDy4sr
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: TimeDJ_production
+  database: timedj_prod
   pool: 5
-  username: root
-  password: 
+  username: timedj
+  password: Wg45GSDy4sr
   socket: /var/run/mysqld/mysqld.sock
