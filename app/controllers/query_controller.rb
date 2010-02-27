@@ -1,10 +1,10 @@
 class QueryController < ApplicationController
 
-  auto_complete_for :city, :name
+  auto_complete_for :city, :name_w_country
 
   def index
-     @cities = City.find(:all)
-     @countries = Country.find(:all)   
+     #@cities = City.find(:all)
+     #@countries = Country.find(:all)   
   end
 
     # GET new_message_url
@@ -19,10 +19,14 @@ class QueryController < ApplicationController
 
     # GET message_url(:id => 1)
     def show
-      temp = params[:city][:name].split(" AND ");
+      # RDC - obviously a cleaner way to do the below...
+      temp = params[:city][:name_w_country].split(" AND ", -1);
+      #temp = temp ? temp : params[:city][:name];
+      
       @myinputs = [];
       temp.each do |i|
-        @myinputs.push(City.find(:first,:conditions =>"name = '#{i}'"))
+        my_city = i.split(",").first;
+        @myinputs.push(City.find(:first,:conditions =>"name = '#{my_city}'"))
       end
       # find and return a specific message
     end

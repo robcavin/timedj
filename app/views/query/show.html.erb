@@ -1,30 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Untitled Document</title>
-	</head>
-    <body>
-    	<!--<%@myinputs.each do |i| %>
-		<%= i.name %>
-		<%end%>-->
-        <table border="1">
-            <tr>
-                <td>
-                    <%=@myinputs[0].name%>
-                </td>
-                <td>
-                    <%=@myinputs[1].name%>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <%=@myinputs[0].country.name%>
-                </td>
-                <td>
-                    <%=@myinputs[1].country.name%>
-                </td>
-            </tr>
-        </table>
-	</body>
-</html>
+<table border="1">
+    <tr>
+        <%@myinputs.each do |i| %>
+        <%= "<td> #{i.name} </td>" %>
+        <%end %>
+    </tr>
+    <tr>
+        <%@myinputs.each do |i| %>
+        <%= "<td> #{i.country.name} </td>" %>
+        <%end %>
+    </tr>
+</table>
+<br>

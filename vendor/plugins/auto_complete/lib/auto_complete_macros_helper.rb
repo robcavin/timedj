@@ -98,7 +98,15 @@ module AutoCompleteMacrosHelper
     items = entries.map { |entry| content_tag("li", phrase ? highlight(entry[field], phrase) : h(entry[field])) }
     content_tag("ul", items.uniq)
   end
-  
+ 
+  #RDC - quick hack - I wanted to run a method based on the value passed in.  Not sure how to do that.  The 
+  # regular autocomplete_result function seems to treat the object as a hash.  can we do that everywhere?
+  def my_auto_complete_result(entries, field, phrase = nil)
+    return unless entries
+    items = entries.map { |entry| content_tag("li", phrase ? highlight(entry.name_w_country, phrase) : h(entry.name_w_country)) }
+    content_tag("ul", items.uniq)
+  end
+
   # Wrapper for text_field with added AJAX autocompletion functionality.
   #
   # In your controller, you'll need to define an action called
