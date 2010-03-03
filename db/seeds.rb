@@ -12,3 +12,8 @@ City.create(:name => 'New York', :country => Country.find(:first, :conditions =>
 City.create(:name => 'Tokyo', :country => Country.find(:first, :conditions => "name = 'Japan'") )
 
 City.update(City.find(:first, :conditions => "name = 'San Francisco'"), :country => Country.find(:first, :conditions => { :name => 'USA' }))
+
+TimeZone.create(:name => 'PST', :offset => '-8')
+TimeZone.create(:name => 'JST', :offset => '9')
+City.update(City.find(:first, :conditions => "name = 'San Francisco'"), :time_zone => TimeZone.find(:first, :conditions => { :name => 'PST' }))
+City.update(City.find(:first, :conditions => "name = 'Tokyo'"), :time_zone => TimeZone.find(:first, :conditions => { :name => 'JST' }))

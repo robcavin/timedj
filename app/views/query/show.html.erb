@@ -1,4 +1,4 @@
-<table border="1">
+<table border="1" align="center">
     <tr>
         <%@myinputs.each do |i| %>
         <%= "<td> #{i.name} </td>" %>
@@ -9,5 +9,20 @@
         <%= "<td> #{i.country.name} </td>" %>
         <%end %>
     </tr>
+    <tr>
+        <%@myinputs.each do |i| %>
+        <%= "<td> #{i.time_zone.name} </td>" %>
+        <%end %>
+    </tr>
+	
+	<%(0 .. 23).each do |i| %>
+		<%= "<tr>" %>
+		<td> <%=i%> </td>
+		<%(1..(@myinputs.length-1)).each do |j|%>
+			<%= "<td> #{(i - @tzdeltas[j]) % 24} </td>" %>
+		<%end%>
+		<%= "</tr>" %>
+	<%end%>
+	
 </table>
 <br>

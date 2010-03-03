@@ -9,15 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100217063303) do
+ActiveRecord::Schema.define(:version => 20100303050038) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
     t.integer "country_id"
+    t.integer "time_zone_id"
   end
 
   create_table "countries", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "time_zones", :force => true do |t|
+    t.string  "name"
+    t.integer "offset"
   end
 
 end

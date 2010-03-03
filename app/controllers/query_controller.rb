@@ -28,6 +28,12 @@ class QueryController < ApplicationController
         my_city = i.split(",").first;
         @myinputs.push(City.find(:first,:conditions =>"name = '#{my_city}'"))
       end
+      
+      @tzdeltas = [];
+      @myinputs.each do |i|
+        @tzdeltas.push(i.time_zone.offset - @myinputs[0].time_zone.offset)
+      end
+      
       # find and return a specific message
     end
 
