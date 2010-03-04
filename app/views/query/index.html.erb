@@ -1,7 +1,10 @@
 <%= form_tag(query_path(1),:method => :get)%>
 <%= text_field_with_auto_complete :city, :name_w_country, 
 	{:tabindex => 0, :size => 65, :value => "Eg:  San Francisco; Thailand; LON; GMT"}, {:method => :get} %>
-<button>GO!</button>
+	<input type="image" src="/images/dj_button.png" style="position:relative; left:10px; top:20px" alt="GO!">
 <br>
-<span style="color: silver"> Type the City, Country, Time Zone or Airport Codes </span>
+<span style="color: silver; position:relative; right:25px"> Type the City, Country, Time Zone or Airport Codes </span>
+
+
+
 
