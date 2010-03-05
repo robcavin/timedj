@@ -1,6 +1,9 @@
+<!--<div style="height:500px;width:500px;overflow:scroll" align="center">-->
 <table border="1" align="center">
-	<colgroup width="200">
-	<colgroup width="200">
+	
+	<% @myinputs.length.times do %>
+		<colgroup width="200">
+	<%end%>
 		
     <tr>
         <%@myinputs.each do |i| %>
@@ -31,4 +34,6 @@
 	<%end%>
 	
 </table>
+<!--</div>-->
+
 <br>

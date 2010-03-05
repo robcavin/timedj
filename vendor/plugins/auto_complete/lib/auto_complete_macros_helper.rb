@@ -27,7 +27,7 @@ module AutoCompleteMacrosHelper
   #                                  to 'fieldname=value'.
   # <tt>:frequency</tt>::            Determines the time to wait after the last keystroke
   #                                  for the AJAX request to be initiated.
-  # <tt>:indicator</tt>::            Specifies the DOM ID of an element which will be
+  # <tt>:indicator</tt>::            Specifhttp://script.aculo.us/demos/ajax/autocompleteries the DOM ID of an element which will be
   #                                  displayed while autocomplete is running.
   # <tt>:tokens</tt>::               A string or an array of strings containing
   #                                  separator tokens for tokenized incremental 
@@ -95,18 +95,17 @@ module AutoCompleteMacrosHelper
   # auto_complete action if you need to decorate it further.
   def auto_complete_result(entries, field, phrase = nil)
     return unless entries
-    items = entries.map { |entry| content_tag("li", phrase ? highlight(entry[field], phrase) : h(entry[field])) }
+    items = []
+    entries.each do |entry| 
+      entry_list = entry.send(field)
+      entry_list.each do |sub_entry|
+        items.push(content_tag("li", phrase ? highlight(sub_entry, phrase) : h(sub_entry)))
+      end
+    end
+    
     content_tag("ul", items.uniq)
   end
- 
-  #RDC - quick hack - I wanted to run a method based on the value passed in.  Not sure how to do that.  The 
-  # regular autocomplete_result function seems to treat the object as a hash.  can we do that everywhere?
-  def my_auto_complete_result(entries, field, phrase = nil)
-    return unless entries
-    items = entries.map { |entry| content_tag("li", phrase ? highlight(entry.name_w_country, phrase) : h(entry.name_w_country)) }
-    content_tag("ul", items.uniq)
-  end
-
+  
   # Wrapper for text_field with added AJAX autocompletion functionality.
   #
   # In your controller, you'll need to define an action called

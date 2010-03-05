@@ -1,5 +1,6 @@
 class QueryController < ApplicationController
 
+  auto_complete_for :city, :name
   auto_complete_for :city, :name_w_country
 
   def index
@@ -20,18 +21,18 @@ class QueryController < ApplicationController
     # GET message_url(:id => 1)
     def show
       # RDC - obviously a cleaner way to do the below...
-      temp = params[:city][:name_w_country].split(" AND ", -1);
-      #temp = temp ? temp : params[:city][:name];
+      #temp = params[:city][:name].split('/\s*[;+]+\s*/', -1);
+      temp = params[:city][:name].split(';',-1);
       
-      @myinputs = [];
+      @myinputs = []
       temp.each do |i|
-        my_city = i.split(",").first;
+        my_city = i.split(",").first.strip.squeeze(' ');
         @myinputs.push(City.find(:first,:conditions =>"name = '#{my_city}'"))
       end
       
-      @tzdeltas = [];
+      @tzdeltas = []
       @myinputs.each do |i|
-        @tzdeltas.push(i.time_zone.offset - @myinputs[0].time_zone.offset)
+        @tzdeltas.push(i.time_zone.offset - @myinputs[0].time_zone.offset) if i.time_zone
       end
       
       # find and return a specific message
