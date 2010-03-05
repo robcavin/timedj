@@ -1,4 +1,7 @@
 <table border="1" align="center">
+	<colgroup width="200">
+	<colgroup width="200">
+		
     <tr>
         <%@myinputs.each do |i| %>
         <%= "<td> #{i.name} </td>" %>
@@ -16,10 +19,13 @@
     </tr>
 	
 	<%(0 .. 23).each do |i| %>
+		<% am_pm = i < 12 ? "am" : "pm" %>
 		<%= "<tr>" %>
-		<td> <%=i%> </td>
+		<td> <%="#{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}"%> </td>
 		<%(1..(@myinputs.length-1)).each do |j|%>
-			<%= "<td> #{(i - @tzdeltas[j]) % 24} </td>" %>
+			<% tz_delta = i + @tzdeltas[j]%>
+			<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
+			<%= "<td> #{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>" %>
 		<%end%>
 		<%= "</tr>" %>
 	<%end%>
