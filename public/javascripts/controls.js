@@ -1,6 +1,6 @@
-// Copyright (c) 2005-2008 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
-//           (c) 2005-2008 Ivan Krstic (http://blogs.law.harvard.edu/ivan)
-//           (c) 2005-2008 Jon Tirsen (http://www.tirsen.com)
+// Copyright (c) 2005-2009 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+//           (c) 2005-2009 Ivan Krstic (http://blogs.law.harvard.edu/ivan)
+//           (c) 2005-2009 Jon Tirsen (http://www.tirsen.com)
 // Contributors:
 //  Richard Livsey
 //  Rahul Bhargava
@@ -352,11 +352,6 @@ Ajax.Autocompleter = Class.create(Autocompleter.Base, {
   getUpdatedChoices: function() {
     this.startIndicator();
 
-	// RDC - Here is where the city[name] field of the autocomplete text box comes into play
-	// options.paramName is set to element.name in the initializer for Autocompleter
-	// The auto_complete.rb file contains code to create a method in the query controller class
-	//  that expects the input to come in as a hash on the GET URL - in this case city[name] 
-	// getToken is what is currently typed in the box
     var entry = encodeURIComponent(this.options.paramName) + '=' +
       encodeURIComponent(this.getToken());
 
