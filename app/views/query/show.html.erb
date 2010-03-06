@@ -1,4 +1,28 @@
+<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.tablehover.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.tabSlideOut.v1.3.js"></script>
 
+<script>
+//if (jQuery) { alert("jQuery loaded"); }
+$(document).ready(function() 
+{ 
+$("#timetable").tablesorter();
+$("#timetable").tableHover();
+$('.feedbackpane').tabSlideOut({
+            tabHandle: '.handle',                     //class of the element that will become your tab
+            pathToTabImage: '/images/contact_tab.gif', //path to the image for the tab //Optionally can be set using css
+            imageHeight: '122px',                     //height of tab image           //Optionally can be set using css
+            imageWidth: '40px',                       //width of tab image            //Optionally can be set using css
+            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
+            speed: 300,                               //speed of animation
+            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+            topPos: '200px',                          //position from the top/ use if tabLocation is left or right
+            leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
+            fixedPosition: false                      //options: true makes it stick(fixed position) on scroll
+        });
+
+}); 
+</script>
 
 <!-- Move below this back into layout-->
 
@@ -17,29 +41,19 @@
 <!-- Move above this back into layout-->
 
 
-
-
-
-
-
-<!--<div style="height:500px;width:500px;overflow:scroll" align="center">-->
 <table id="timetable" border="1" align="center">
 	<% @myinputs.length.times do %>
-		<colgroup width="200">
 	<%end%>
     <thead>		
     <tr>
 	<%@myinputs.each do |i| %>
-        	<%= "<th> #{i.name}<BR>"%>
-        	<%= "#{i.country.name} <BR>" %>
+        	<%= "<th> #{i.name},"%>
+        	<%= "#{i.country.name}<BR>" %>
         	<%= "#{i.time_zone.name} </th>" %> 
 	<%end%>     
     </tr>
-		
     </thead>
     <tbody>
-      
-
    
 	<%(0 .. 23).each do |i| %>
 		<% am_pm = i < 12 ? "am" : "pm" %>
@@ -55,6 +69,27 @@
 
         </tbody>
 </table>
-<!--</div>-->
 
-<br>
+
+<div class="feedbackpane" align=center>
+	 <a class="handle" href="http://link-for-non-js-users.html">Content</a>
+
+<!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b92cfbf26eec2ab"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b92cfbf26eec2ab"></script>
+<!-- AddThis Button END -->
+
+	<HR width=100%>
+
+	<h3>Feedback</h3>
+	<input type="button" class="smilebutton" id="smilebutton1" value=":)"/>|<input type="button"  class="frownbutton" id="frownbutton1"  value=":(""/>
+	<BR><BR>
+	<textarea class="fbtext" >What's on your mind? </textarea>
+	<BR>
+	<input type="button" class="senditbutton" value="Send It!"/>
+
+	<HR width=100%>
+	<div class="Linkbar">|<a title="" href="#"  id="LinkBar_4_0">About Us</a> |
+
+</div>
+
+

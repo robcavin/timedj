@@ -1,3 +1,4 @@
+/* Default Style Sheet for TimeDJ */
 
 div.Title {
  text-align: center;
@@ -21,21 +22,51 @@ hr
 	width: 90%;
 }
 
-td.hover, tr.hover
-{
-	background-color: #69f;
+div.Linkbar {
+ text-align: center;
+ font-size:10px;
+ position:relative;
+ top:0px;
+ } 
+      
+div.feedbackpane {
+          padding: 20px;
+          width: 150px;
+          background: white;
+          border: 1px solid #29216d;
+	  height: 170px; 
+      }      
+input.smilebutton {
+	color:#050; 
+	  font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
+	  background-color:lightgreen; 
+	  border:1px solid; 
+	  border-color: #696 #363 #363 #696; 
+	
 }
-th.hover, tfoot td.hover
-{
-	background-color: ivory;
+                  
+input.frownbutton {
+
+	color:#050; 
+	  font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
+	  background-color:pink; 
+	  border:1px solid; 
+	  border-color: #696 #363 #363 #696; 
 }
-td.hovercell, th.hovercell
-{
-	background-color: #abc;
+
+input.fbtext {
+	style="position:relative; top:10px;";
 }
-td.hoverrow, th.hoverrow
-{
-	background-color: #6df;
+
+.Linkbar{
+	style="position:relative; top:15px;";
+}
+
+h3 {
+ text-align: center;
+ font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
+ position:relative;
+ top:0px;
 }
 
 
