@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100303050038) do
+ActiveRecord::Schema.define(:version => 20100305065626) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20100303050038) do
 
   create_table "countries", :force => true do |t|
     t.string "name"
+    t.string "country_code", :limit => 2
   end
 
   create_table "time_zones", :force => true do |t|
