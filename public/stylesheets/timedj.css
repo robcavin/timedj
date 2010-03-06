@@ -1,0 +1,42 @@
+
+div.Title {
+ text-align: center;
+ font-size:50px;
+ font-variant:small-caps;
+ position:relative;
+ top:10px;
+}
+
+div.Body {
+ text-align: center;
+ font-size:14.5px;
+ position:relative;
+ top:0px;
+ } 
+
+hr 
+{
+	margin-left: 50;
+	margin-right: 50;    
+	width: 90%;
+}
+
+td.hover, tr.hover
+{
+	background-color: #69f;
+}
+th.hover, tfoot td.hover
+{
+	background-color: ivory;
+}
+td.hovercell, th.hovercell
+{
+	background-color: #abc;
+}
+td.hoverrow, th.hoverrow
+{
+	background-color: #6df;
+}
+
+
+
