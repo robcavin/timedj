@@ -34,4 +34,4 @@ sudo ln -s /usr/bin/gem1.8 /usr/local/bin/gem
 sudo gem install rails
 
 sudo gem install mysql
-
+sudo gem install json

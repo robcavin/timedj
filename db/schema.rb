@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100305065626) do
   create_table "time_zones", :force => true do |t|
     t.string  "name"
     t.integer "offset"
+    t.string  "timezoneID"
   end
 
 end
