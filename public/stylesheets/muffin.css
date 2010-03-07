@@ -19,8 +19,7 @@ table
 thead th,
 tbody th
 {
-	background            : #FFF url(th_bck.gif) repeat-x;
-	color                 : #666;  
+	background            : #FFF url(th_bck.gif) repeat-x;	color                 : #666;  
 	padding               : 5px 5px;
 	border-left           : 1px solid #CCC;
 	width 	      	      : 175px;
@@ -81,3 +80,11 @@ table a:active
 {
 	color                 : #003366;
 }
+
+table thead tr .headerSortUp {
+	background-image: url(/images/asc.gif);
+}
+table thead tr .headerSortDown {
+	background-image: url(/images/desc.gif);
+}
+

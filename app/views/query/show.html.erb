@@ -6,6 +6,10 @@
 //if (jQuery) { alert("jQuery loaded"); }
 $(document).ready(function() 
 { 
+
+<% @myinputs.length.times do %>
+<%end%>
+
 $("#timetable").tablesorter();
 $("#timetable").tableHover();
 $('.feedbackpane').tabSlideOut({
@@ -42,8 +46,7 @@ $('.feedbackpane').tabSlideOut({
 
 
 <table id="timetable" border="1" align="center">
-	<% @myinputs.length.times do %>
-	<%end%>
+	
     <thead>		
     <tr>
 	<%@myinputs.each do |i| %>
