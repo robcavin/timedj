@@ -25,25 +25,30 @@ class QueryController < ApplicationController
      temp = params[:city][:name].split(/\s*[;+]+\s*/, -1);
 
       @myinputs = []
+      lookup_params = {}
       temp.each do |i|
-        my_city = i.split(",").first.strip.squeeze(' ');
-        @myinputs.push(City.find(:first,:conditions =>"name = '#{my_city}'"))
+        my_params = i.split(",",-1)
+        lookup_params[:name] = my_params[0].strip.squeeze(' ')
+        lookup_params[:country_id] = Country.find(:first, :conditions => {:name => my_params[1].gsub(/\(.*/,"").strip.squeeze(' ')}) if my_params[1];        
+        @myinputs.push(City.find(:first,:conditions => lookup_params))
       end
 
+      count = 0
       @myinputs.each do |city|
         if (!city.time_zone) 
           
-          url = URI.parse("http://maps.google.com/maps/geo?q=#{city.name},#{city.country.name}&output=json&sensor=false&key=your_api_keyABQIAAAALnUIKv2c_PvAAo8iJhAfNBTZpUKzg8jOhOfiy-bfLwwLBS-ETBS3TEyv5VbbM1u2P8sqwqEuHG4X9w")
+          url = URI.parse("http://maps.google.com/maps/geo?q=#{ city.name.gsub(" ","+") },#{ city.country.name.gsub(" ","+") }&output=json&sensor=false&key=your_api_keyABQIAAAALnUIKv2c_PvAAo8iJhAfNBTZpUKzg8jOhOfiy-bfLwwLBS-ETBS3TEyv5VbbM1u2P8sqwqEuHG4X9w")
           response = Net::HTTP.get_response(url)
           jResponse = JSON.parse response.body
           url = URI.parse("http://ws.geonames.org/timezoneJSON?lat=#{jResponse['Placemark'][0]['Point']['coordinates'][1]}&lng=#{jResponse['Placemark'][0]['Point']['coordinates'][0]}")
           response = Net::HTTP.get_response(url)
           jResponse = JSON.parse response.body
-          
-          City.update(city, :time_zone => TimeZone.find(:first,:conditions => {:timezoneID => jResponse['timezoneId']}))
+
+          # Update the timezone in the db and update the active record object (else timezone still wont' be set below)
+          @myinputs[count] = City.update(city, :time_zone => TimeZone.find(:first,:conditions => {:timezoneID => jResponse['timezoneId']}))
           
         end        
-
+        count += 1
       end
       
       @tzdeltas = []
