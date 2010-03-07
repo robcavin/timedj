@@ -9,7 +9,7 @@ class City < ActiveRecord::Base
     city_country_tz += " (#{self.time_zone.name})" if (self.time_zone) 
     
     # The above might not return a value if time_zone is not defined
-    #city_country_tz
+    city_country_tz
   end
   
 end
