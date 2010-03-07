@@ -1,0 +1,10 @@
+--- 
+group: honey
+address: 127.0.0.1
+log_file: log/mongrel.log
+port: "8000"
+cwd: /usr/local/projects/timedj
+environment: production
+user: honey
+pid_file: tmp/pids/mongrel.pid
+servers: 2
