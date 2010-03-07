@@ -7,14 +7,21 @@ class Country < ActiveRecord::Base
     country_city_tz = []  # Empty array for text fields.  Given input USA, should be populated with "San Francisco, USA (PDT)" and "New York, USA (EST)" if all goes well
     cities_w_time_zone = City.find(:all, :select => "distinct time_zone_id, name", :conditions => {:country_id => self})
 
-    cities_w_time_zone.each do |city_i|
-      country_city_tz.push("#{city_i.name},#{self.name} (#{city_i.time_zone.name})")
+    if (cities_w_time_zone) # Make sure there are any cities in this country
+
+      cities_w_time_zone.each do |city_i|
+        if (city_i.time_zone)  # Watch out as NULL is a distinct time zone!! 
+          country_city_tz.push("#{city_i.name},#{self.name} (#{city_i.time_zone.name})") 
+        end
+      end
+      
+    else
+      # If there are no cities with time zones for the country, just return the country name
+      country_city_tz = country.name
     end
-
-    # If there are no citiez with time zones for the country, just return the country name
-    country_city_tz = country.name if (!cities_w_time_zone)
-
-    country_city_tz  # The if statement above doesn't actually return the string, so make double sure we do here
+  
+    # Return array of countries
+    country_city_tz  
     
   end
 
