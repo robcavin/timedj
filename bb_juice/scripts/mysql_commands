@@ -1,0 +1,3 @@
+# populate tz data.  file in ./bbj/data
+load data local infile "/home/rob/work/tzdir/etc/rob_tz_mysql.dat" replace into table time_zones FIELDS TERMINATED BY ',' ENCLOSED BY '' ESCAPED BY '\\' LINES TERMINATED BY '\n' STARTING BY '';
+

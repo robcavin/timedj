@@ -20,14 +20,30 @@ class QueryController < ApplicationController
 
     # GET message_url(:id => 1)
     def show
-      # RDC - obviously a cleaner way to do the below...
-      #temp = params[:city][:name].split('/\s*[;+]+\s*/', -1);
-      temp = params[:city][:name].split(';',-1);
-      
+     require 'net/http'
+     require 'json'
+     temp = params[:city][:name].split(/\s*[;+]+\s*/, -1);
+
       @myinputs = []
       temp.each do |i|
         my_city = i.split(",").first.strip.squeeze(' ');
         @myinputs.push(City.find(:first,:conditions =>"name = '#{my_city}'"))
+      end
+
+      @myinputs.each do |city|
+        if (!city.time_zone) 
+          
+          url = URI.parse("http://maps.google.com/maps/geo?q=#{city.name},#{city.country.name}&output=json&sensor=false&key=your_api_keyABQIAAAALnUIKv2c_PvAAo8iJhAfNBTZpUKzg8jOhOfiy-bfLwwLBS-ETBS3TEyv5VbbM1u2P8sqwqEuHG4X9w")
+          response = Net::HTTP.get_response(url)
+          jResponse = JSON.parse response.body
+          url = URI.parse("http://ws.geonames.org/timezoneJSON?lat=#{jResponse['Placemark'][0]['Point']['coordinates'][1]}&lng=#{jResponse['Placemark'][0]['Point']['coordinates'][0]}")
+          response = Net::HTTP.get_response(url)
+          jResponse = JSON.parse response.body
+          
+          City.update(city, :time_zone => TimeZone.find(:first,:conditions => {:timezoneID => jResponse['timezoneId']}))
+          
+        end        
+
       end
       
       @tzdeltas = []
@@ -51,5 +67,6 @@ class QueryController < ApplicationController
     # DELETE message_url(:id => 1)
     def destroy
       # delete a specific message
-    end
+  end
+  
  end

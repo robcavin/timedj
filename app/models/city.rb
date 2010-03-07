@@ -7,6 +7,9 @@ class City < ActiveRecord::Base
     
     # If the city has a time zone mapped in the db, print it out
     city_country_tz += " (#{self.time_zone.name})" if (self.time_zone) 
+    
+    # The above might not return a value if time_zone is not defined
+    #city_country_tz
   end
   
 end
