@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100305065626) do
+ActiveRecord::Schema.define(:version => 20100309071926) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -17,15 +17,18 @@ ActiveRecord::Schema.define(:version => 20100305065626) do
     t.integer "time_zone_id"
   end
 
+  add_index "cities", ["name"], :name => "name"
+
   create_table "countries", :force => true do |t|
     t.string "name"
     t.string "country_code", :limit => 2
   end
 
+  add_index "countries", ["name"], :name => "name"
+
   create_table "time_zones", :force => true do |t|
     t.string  "name"
     t.integer "offset"
-    t.string  "timezoneID"
   end
 
 end
