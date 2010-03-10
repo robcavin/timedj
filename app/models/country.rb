@@ -5,7 +5,8 @@ class Country < ActiveRecord::Base
   def full_descriptor
 
     country_city_tz = []  # Empty array for text fields.  Given input USA, should be populated with "San Francisco, USA (PDT)" and "New York, USA (EST)" if all goes well
-    cities_w_time_zone = City.find(:all, :select => "distinct time_zone_id, name", :conditions => {:country_id => self})
+    # modified the condtions to ignore null value time zones, big speed up for the undefined cites
+    cities_w_time_zone = City.find(:all, :select => "distinct time_zone_id, name", :conditions => "cities.country_id = #{self.id} AND time_zone_id IS NOT NULL")
 
     if (cities_w_time_zone) # Make sure there are any cities in this country
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100309071926) do
+ActiveRecord::Schema.define(:version => 20100310072005) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100309071926) do
     t.integer "time_zone_id"
   end
 
+  add_index "cities", ["country_id"], :name => "country_id"
   add_index "cities", ["name"], :name => "name"
 
   create_table "countries", :force => true do |t|
