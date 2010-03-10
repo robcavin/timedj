@@ -1,0 +1,1989 @@
+# Logfile created on Tue Feb 23 22:33:08 -0800 2010/!\ FAILSAFE /!\  Tue Feb 23 22:33:09 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Tue Feb 23 22:33:17 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Tue Feb 23 22:33:26 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Tue Feb 23 22:33:32 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Sun Feb 28 23:08:00 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Sun Feb 28 23:10:15 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Wed Mar 03 22:29:04 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+/!\ FAILSAFE /!\  Wed Mar 03 22:29:17 -0800 2010
+  Status: 500 Internal Server Error
+  Access denied for user 'timedj'@'localhost' (using password: YES)
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /home/jeff/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (219.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (336.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCities (20100217063159)
+  [4;35;1mSQL (159.1ms)[0m   [0mCREATE TABLE `cities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `country_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (55.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100217063159')[0m
+Migrating to CreateCountries (20100217063303)
+  [4;35;1mSQL (171.8ms)[0m   [0mCREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100217063303')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mSQL (20.3ms)[0m   [0mdescribe `cities`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `cities`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `countries`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCountry Create (0.1ms)[0m   [0;1mINSERT INTO `countries` (`name`) VALUES('USA')[0m
+  [4;35;1mSQL (49.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCountry Create (0.9ms)[0m   [0mINSERT INTO `countries` (`name`) VALUES('Japan')[0m
+  [4;36;1mSQL (58.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCountry Create (0.8ms)[0m   [0;1mINSERT INTO `countries` (`name`) VALUES('India')[0m
+  [4;35;1mSQL (62.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCountry Load (0.6ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`name` = 'India') LIMIT 1[0m
+  [4;35;1mCity Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCity Create (0.2ms)[0m   [0mINSERT INTO `cities` (`name`, `country_id`) VALUES('San Francisco', 3)[0m
+  [4;36;1mSQL (47.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCountry Load (0.5ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`name` = 'USA') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCity Create (0.3ms)[0m   [0mINSERT INTO `cities` (`name`, `country_id`) VALUES('New York', 1)[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCountry Load (0.4ms)[0m   [0mSELECT * FROM `countries` WHERE (name = 'Japan') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCity Create (0.3ms)[0m   [0mINSERT INTO `cities` (`name`, `country_id`) VALUES('Tokyo', 2)[0m
+  [4;36;1mSQL (50.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCity Load (0.4ms)[0m   [0mSELECT * FROM `cities` WHERE (name = 'San Francisco') LIMIT 1[0m
+  [4;36;1mCountry Load (0.6ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`name` = 'USA') LIMIT 1[0m
+  [4;35;1mCity Load (58.3ms)[0m   [0mSELECT * FROM `cities` WHERE (`cities`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCity Update (12.3ms)[0m   [0mUPDATE `cities` SET `country_id` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 22:36:23) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 72ms (View: 70, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-03 22:36:29) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"san"}}
+  [4;36;1mCity Load (0.5ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE '%san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 111ms (View: 100, DB: 3) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=san]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#show (for 127.0.0.1 at 2010-03-03 22:36:33) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"San Francisco,USA"}, "id"=>"1"}
+  [4;36;1mCity Load (0.7ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name = 'San Francisco') LIMIT 1[0m
+Rendering template within layouts/query
+Rendering query/show
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 21ms (View: 13, DB: 3) | 200 OK [http://0.0.0.0/query/1?city%5Bname_w_country%5D=San+Francisco%2CUSA]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 22:58:42) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-03 22:58:42) [GET]
+
+ActionController::RoutingError (No route matches "/public/images/timedj_title.png" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:00:37) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:01:08) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:01:50) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:01:52) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:04:27) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:04:44) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:04:45) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:05:18) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:15:14) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#show (for 127.0.0.1 at 2010-03-03 23:15:23) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"Eg:  San Francisco; Thailand; LON; GMT"}, "x"=>"28", "y"=>"28", "id"=>"1"}
+  [4;36;1mCity Load (0.3ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name = 'Eg: San Francisco; Thailand; LON; GMT') LIMIT 1[0m
+Rendering template within layouts/query
+Rendering query/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #4 of app/views/query/show.html.erb:
+1: <table border="1">
+2:     <tr>
+3:         <%@myinputs.each do |i| %>
+4:         <%= "<td> #{i.name} </td>" %>
+5:         <%end %>
+6:     </tr>
+7:     <tr>
+
+    app/views/query/show.html.erb:4
+    app/views/query/show.html.erb:3:in `each'
+    app/views/query/show.html.erb:3
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-03 23:15:34) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"san"}}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE '%san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=san]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#show (for 127.0.0.1 at 2010-03-03 23:15:38) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"San Francisco,USA"}, "x"=>"39", "y"=>"17", "id"=>"1"}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name = 'San Francisco') LIMIT 1[0m
+Rendering template within layouts/query
+Rendering query/show
+  [4;36;1mCity Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/query/1?city%5Bname_w_country%5D=San+Francisco%2CUSA&x=39&y=17]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:17:31) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-03 23:20:19) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"san"}}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE '%san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=san]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:22:31) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:27:42) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:28:35) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:30:44) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:53:39) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:54:09) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:54:22) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:54:47) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:55:01) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:55:23) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-03 23:56:04) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:32:17) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:32:19) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:34:04) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:34:11) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:34:26) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:34:35) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:35:49) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:35:54) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:37:47) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 28ms (View: 25, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:37:50) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:39:22) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:40:46) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:42:15) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#show (for 127.0.0.1 at 2010-03-04 00:42:52) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"Eg:  San Francisco; Thailand; LON; GMT"}, "x"=>"50", "y"=>"24", "id"=>"1"}
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name = 'Eg: San Francisco; Thailand; LON; GMT') LIMIT 1[0m
+Rendering template within layouts/query
+Rendering query/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #4 of app/views/query/show.html.erb:
+1: <table border="1">
+2:     <tr>
+3:         <%@myinputs.each do |i| %>
+4:         <%= "<td> #{i.name} </td>" %>
+5:         <%end %>
+6:     </tr>
+7:     <tr>
+
+    app/views/query/show.html.erb:4
+    app/views/query/show.html.erb:3:in `each'
+    app/views/query/show.html.erb:3
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-04 00:42:58) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"sa"}}
+  [4;35;1mCity Load (0.3ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE '%sa%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 63ms (View: 55, DB: 2) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=sa]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#show (for 127.0.0.1 at 2010-03-04 00:43:02) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"San Francisco,USA"}, "x"=>"50", "y"=>"20", "id"=>"1"}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name = 'San Francisco') LIMIT 1[0m
+Rendering template within layouts/query
+Rendering query/show
+  [4;36;1mCity Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 16ms (View: 9, DB: 2) | 200 OK [http://0.0.0.0/query/1?city%5Bname_w_country%5D=San+Francisco%2CUSA&x=50&y=20]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:48:07) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:48:08) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:49:29) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:51:28) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:51:29) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:52:00) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 48ms (View: 46, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:52:45) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:53:28) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:54:22) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:54:37) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:54:49) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:54:50) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:55:39) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:56:14) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:56:14) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:56:53) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:57:15) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:57:59) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:58:00) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 00:59:21) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:00:01) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:00:03) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:00:04) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:01:35) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:01:36) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:04:59) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:05:01) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:05:20) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:05:21) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:05:34) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:05:36) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 42ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:06:20) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:06:43) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:06:56) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:07:22) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:07:36) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:08:11) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 48ms (View: 45, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:08:13) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:08:26) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:09:27) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:10:44) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:12:36) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:12:37) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:04) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:06) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:23) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:34) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:46) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:13:56) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 47ms (View: 44, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:14:25) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:20:53) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-04 01:21:00) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"san"}}
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE '%san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 21ms (View: 12, DB: 2) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=san]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:21:20) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-04 01:21:23) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"sa"}}
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE '%sa%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 49ms (View: 7, DB: 2) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=sa]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:23:33) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:23:34) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-04 01:23:37) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"sa"}}
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE '%sa%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=sa]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name_w_country (for 127.0.0.1 at 2010-03-04 01:23:43) [GET]
+  Parameters: {"city"=>{"name_w_country"=>"sa"}}
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE '%sa%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://0.0.0.0/query/auto_complete_for_city_name_w_country?city%5Bname_w_country%5D=sa]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:30:51) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (14.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-04 01:31:02) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 10ms (View: 8, DB: 15) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+  [4;36;1mSQL (68.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('1')[0m
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+  [4;35;1mSQL (237.9ms)[0m   [0mCREATE TABLE `time_zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `offset` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (403.4ms)[0m   [0;1mALTER TABLE `cities` ADD `time_zone_id` int(11)[0m
+  [4;35;1mSQL (56.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100303050038')[0m
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'size2' at line 1: ALTER TABLE `countries` ADD `country_code` size2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit2' at line 1: ALTER TABLE `countries` ADD `country_code` limit2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit2' at line 1: ALTER TABLE `countries` ADD `country_code` limit2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit2' at line 1: ALTER TABLE `countries` ADD `country_code` limit2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'size2' at line 1: ALTER TABLE `countries` ADD `country_code` size2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (505.4ms)[0m   [0;1mALTER TABLE `countries` ADD `country_code` varchar(255)[0m
+  [4;35;1mSQL (54.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100305065626')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `cities`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `cities`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `countries`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `time_zones`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `time_zones`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `time_zones`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (470.9ms)[0m   [0;1mALTER TABLE `countries` DROP `country_code`[0m
+  [4;35;1mSQL (88.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100305065626'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `cities`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `cities`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `countries`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `time_zones`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `time_zones`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `time_zones`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+  [4;36;1mSQL (501.2ms)[0m   [0;1mALTER TABLE `countries` ADD `country_code` varchar(2)[0m
+  [4;35;1mSQL (54.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100305065626')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `cities`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `cities`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `countries`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `countries`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `time_zones`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `time_zones`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `time_zones`[0m
+  [4;36;1mSQL (210.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (38.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-08 23:35:42) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 133ms (View: 127, DB: 249) | 200 OK [http://localhost/]
+  [4;36;1mSQL (14.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:35:48) [GET]
+  Parameters: {"city"=>{"name"=>"san"}}
+  [4;36;1mCity Load (8710.0ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (12.9ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (245.9ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.5ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 248) [0m
+  [4;35;1mCountry Load (0.4ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 160) [0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 30) [0m
+  [4;35;1mCountry Load (0.3ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 192) [0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 120) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 170) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 230) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 76) [0m
+  [4;36;1mCity Load (1835.7ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 217) [0m
+Completed in 10968ms (View: 46, DB: 10823) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san]
+  [4;35;1mSQL (43.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-08 23:36:15) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 6ms (View: 4, DB: 43) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:36:20) [GET]
+  Parameters: {"city"=>{"name"=>"san"}}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (33.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 248) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 160) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 30) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 192) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 120) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 170) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 230) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 76) [0m
+  [4;35;1mCity Load (0.0ms)[0m   [0mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 217) [0m
+Completed in 62ms (View: 15, DB: 37) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:39:37) [GET]
+  Parameters: {"city"=>{"name"=>"san fr"}}
+  [4;36;1mCity Load (1941.4ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'san fr%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.8ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'san fr%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (115.8ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 53) [0m
+  [4;35;1mCountry Load (12.4ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 107) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 220) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 228) [0m
+  [4;35;1mCountry Load (0.3ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 169) [0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 56) [0m
+  [4;35;1mCountry Load (0.3ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 67) [0m
+Completed in 2102ms (View: 17, DB: 2074) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20fr]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:39:52) [GET]
+  Parameters: {"city"=>{"name"=>"san"}}
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 248) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 160) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 30) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 192) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 120) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 170) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 230) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 76) [0m
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 217) [0m
+Completed in 21ms (View: 9, DB: 2) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:39:57) [GET]
+  Parameters: {"city"=>{"name"=>"ita"}}
+  [4;35;1mCity Load (1825.9ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'ita%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'ita%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 122) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 189) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 196) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 34) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 74) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 175) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 187) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;35;1mCity Load (2186.2ms)[0m   [0mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 119) [0m
+Completed in 4923ms (View: 898, DB: 4015) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=ita]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:40:07) [GET]
+  Parameters: {"city"=>{"name"=>"ital"}}
+  [4;36;1mCity Load (1808.6ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'ital%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.7ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'ital%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 70) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 219) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 88) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 78) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 70) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 28) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 88) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 243) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 12) [0m
+  [4;36;1mCity Load (4.6ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 119) [0m
+Completed in 2711ms (View: 884, DB: 1817) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=ital]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:40:16) [GET]
+  Parameters: {"city"=>{"name"=>"italy"}}
+  [4;35;1mCity Load (1785.6ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'italy%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.6ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'italy%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 138) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 150) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 68) [0m
+  [4;35;1mCity Load (4.0ms)[0m   [0mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 119) [0m
+Completed in 2744ms (View: 941, DB: 1792) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=italy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:40:39) [GET]
+  Parameters: {"city"=>{"name"=>"Italy, United State"}}
+  [4;36;1mCity Load (1832.8ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'italy, united state%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.7ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'italy, united state%') ORDER BY name ASC LIMIT 10[0m
+Completed in 1845ms (View: 1, DB: 1834) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=Italy%2C%20United%20State]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:40:40) [GET]
+  Parameters: {"city"=>{"name"=>"Italy, U"}}
+  [4;36;1mCity Load (1897.2ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'italy, u%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.7ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'italy, u%') ORDER BY name ASC LIMIT 10[0m
+Completed in 1911ms (View: 1, DB: 1898) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=Italy%2C%20U]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:40:42) [GET]
+  Parameters: {"city"=>{"name"=>"Italy"}}
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'italy%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'italy%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 138) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 150) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 41) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;35;1mCountry Load (0.3ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 68) [0m
+  [4;36;1mCity Load (4.0ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 119) [0m
+Completed in 911ms (View: 894, DB: 10) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=Italy]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:41:10) [GET]
+  Parameters: {"city"=>{"name"=>"united"}}
+  [4;35;1mCity Load (1795.6ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'united%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'united%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 24) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+  [4;36;1mCity Load (1681.1ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 3) [0m
+  [4;35;1mCity Load (1921.3ms)[0m   [0mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 245) [0m
+  [4;36;1mCity Load (3610.7ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 247) [0m
+Completed in 14227ms (View: 5206, DB: 9011) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=united]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-08 23:41:24) [GET]
+  Parameters: {"city"=>{"name"=>"united"}}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'united%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'united%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 247) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 24) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 3) [0m
+  [4;35;1mCity Load (3.9ms)[0m   [0mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 245) [0m
+  [4;36;1mCity Load (3859.7ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 247) [0m
+Completed in 9206ms (View: 5329, DB: 3866) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=united]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#index (for 127.0.0.1 at 2010-03-09 21:10:04) [GET]
+Rendering template within layouts/query
+Rendering query/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:10:08) [GET]
+  Parameters: {"city"=>{"name"=>"san fran"}}
+  [4;35;1mCity Load (1957.3ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san fran%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san fran%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (32.5ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.4ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 220) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 119) [0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 228) [0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 169) [0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 56) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 67) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;36;1mCountry Load (0.2ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+Completed in 2168ms (View: 39, DB: 1994) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20fran]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:10:10) [GET]
+  Parameters: {"city"=>{"name"=>"san francisco"}}
+  [4;35;1mCity Load (1934.8ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisco%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.8ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisco%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 56) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 67) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 53) [0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 58) [0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 100) [0m
+  [4;36;1mCountry Load (0.3ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 48) [0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 252) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 220) [0m
+Completed in 1960ms (View: 10, DB: 1939) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisco]
+  [4;35;1mSQL (15.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:46:37) [GET]
+  Parameters: {"city"=>{"name"=>"san francisco,"}}
+  [4;35;1mCity Load (2891.9ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisco,%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (15.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisco,%') ORDER BY name ASC LIMIT 10[0m
+Completed in 2992ms (View: 2, DB: 2939) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisco%2C]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:46:40) [GET]
+  Parameters: {"city"=>{"name"=>"san francisco, u"}}
+  [4;35;1mCity Load (1875.0ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisco, u%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisco, u%') ORDER BY name ASC LIMIT 10[0m
+Completed in 1887ms (View: 1, DB: 1876) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisco%2C%20u]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:46:41) [GET]
+  Parameters: {"city"=>{"name"=>"san francisco,"}}
+  [4;35;1mCity Load (0.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisco,%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisco,%') ORDER BY name ASC LIMIT 10[0m
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisco%2C]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:46:57) [GET]
+  Parameters: {"city"=>{"name"=>"san francisco"}}
+  [4;35;1mCity Load (0.2ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisco%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisco%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 56) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 67) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 53) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 58) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 100) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 48) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 252) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 220) [0m
+Completed in 19ms (View: 8, DB: 3) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisco]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:46:58) [GET]
+  Parameters: {"city"=>{"name"=>"san francisc"}}
+  [4;35;1mCity Load (1953.1ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'san francisc%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (1.8ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'san francisc%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 169) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 56) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 67) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 204) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 26) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 53) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 58) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 100) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 48) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 252) [0m
+Completed in 1982ms (View: 8, DB: 1957) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san%20francisc]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:47:07) [GET]
+  Parameters: {"city"=>{"name"=>"toky"}}
+  [4;35;1mCity Load (1828.7ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'toky%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.6ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'toky%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 43) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 248) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 196) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 122) [0m
+Completed in 1846ms (View: 5, DB: 1831) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=toky]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 21:47:20) [GET]
+  Parameters: {"city"=>{"name"=>"cst"}}
+  [4;35;1mCity Load (1917.3ms)[0m   [0mSELECT * FROM `cities` WHERE (name LIKE 'cst%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCountry Load (0.7ms)[0m   [0;1mSELECT * FROM `countries` WHERE (name LIKE 'cst%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCity Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mCountry Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.2ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 121) [0m
+Completed in 1933ms (View: 3, DB: 1920) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=cst]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (101.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to Initial (1)
+Migrating to CreateCities (20100217063159)
+Migrating to CreateCountries (20100217063303)
+Migrating to CreateTimeZones (20100303050038)
+Migrating to AddCountryCodeToCountries (20100305065626)
+Migrating to AddIndexesToCitiesCountries (20100309071926)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing QueryController#auto_complete_for_city_name (for 127.0.0.1 at 2010-03-09 22:03:01) [GET]
+  Parameters: {"city"=>{"name"=>"san"}}
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT * FROM `cities` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;35;1mCountry Load (0.3ms)[0m   [0mSELECT * FROM `countries` WHERE (name LIKE 'san%') ORDER BY name ASC LIMIT 10[0m
+  [4;36;1mCity Columns (37.9ms)[0m   [0;1mSHOW FIELDS FROM `cities`[0m
+  [4;35;1mCountry Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 248) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 160) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 30) [0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 192) [0m
+  [4;36;1mCountry Load (0.1ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 114) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 120) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 170) [0m
+  [4;35;1mCountry Load (0.0ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 177) [0m
+  [4;36;1mCountry Load (0.0ms)[0m   [0;1mSELECT * FROM `countries` WHERE (`countries`.`id` = 230) [0m
+  [4;35;1mCountry Load (16.8ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 76) [0m
+  [4;36;1mCity Load (0.1ms)[0m   [0;1mSELECT distinct time_zone_id, name FROM `cities` WHERE (`cities`.`country_id` = 217) [0m
+Completed in 102ms (View: 29, DB: 59) | 200 OK [http://localhost/query/auto_complete_for_city_name?city%5Bname%5D=san]
