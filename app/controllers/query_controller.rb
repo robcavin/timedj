@@ -55,12 +55,18 @@ class QueryController < ApplicationController
       count = 0
       @myinputs.each do |city|
         if (!city.time_zone) 
-          # get the lat and long from google
-          url = URI.parse("http://maps.google.com/maps/geo?q=#{ city.name.gsub(" ","+") },#{ city.country.name.gsub(" ","+") }&output=json&sensor=false&key=your_api_keyABQIAAAALnUIKv2c_PvAAo8iJhAfNBTZpUKzg8jOhOfiy-bfLwwLBS-ETBS3TEyv5VbbM1u2P8sqwqEuHG4X9w")
-          response = Net::HTTP.get_response(url)
-          jResponse = JSON.parse response.body
-          lat = jResponse['Placemark'][0]['Point']['coordinates'][1]
-          long = jResponse['Placemark'][0]['Point']['coordinates'][0]
+          # first check if we aleady the lat/long in our db
+          if city.lat and city.long
+            lat = city.lat
+            long = city.long
+          else
+            # get the lat and long from google
+            url = URI.parse("http://maps.google.com/maps/geo?q=#{ city.name.gsub(" ","+") },#{ city.country.name.gsub(" ","+") }&output=json&sensor=false&key=your_api_keyABQIAAAALnUIKv2c_PvAAo8iJhAfNBTZpUKzg8jOhOfiy-bfLwwLBS-ETBS3TEyv5VbbM1u2P8sqwqEuHG4X9w")
+            response = Net::HTTP.get_response(url)
+            jResponse = JSON.parse response.body
+            lat = jResponse['Placemark'][0]['Point']['coordinates'][1]
+            long = jResponse['Placemark'][0]['Point']['coordinates'][0]
+          end
           
           # get the time zone based on the lat and long via geonames.org webservice
           # first try their xml api since it seems to be more stable
