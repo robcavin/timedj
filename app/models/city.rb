@@ -1,9 +1,15 @@
 class City < ActiveRecord::Base
   belongs_to :country
   belongs_to :time_zone
+  belongs_to :region
   
+  # construct the full text you want to print out on an auto_complete
+  # name, country, (time_zone)
   def full_descriptor
-    city_country_tz = self.name
+    city_country_tz = self.utf8_name # we will search on the ascii name but display the UTF8 one
+    
+    # if city has a region mapped in the db, print it out
+    city_country_tz += ", #{self.region.name}" if (self.region)
     
     # If the city has a country mapped in the db, print it out
     city_country_tz += ", #{self.country.name}" if (self.country)

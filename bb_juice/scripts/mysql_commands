@@ -1,3 +1,15 @@
 # populate tz data.  file in ./bbj/data
-load data local infile "/home/rob/work/tzdir/etc/rob_tz_mysql.dat" replace into table time_zones FIELDS TERMINATED BY ',' ENCLOSED BY '' ESCAPED BY '\\' LINES TERMINATED BY '\n' STARTING BY '';
+load data local infile "~/work/timedj/bb_juice/data/rob_tz_mysql.dat" replace into table time_zones FIELDS TERMINATED BY ',' ENCLOSED BY '' ESCAPED BY '\\' LINES TERMINATED BY '\n' STARTING BY '';
 
+# command line command to clean up the maxmind cities file
+# it could probably still use some more clean up...
+sed 's/((//g; s/))//g; s/"//g' worldcitiespop.txt > worldcitiespop_clean.txt
+
+# populate countries table
+load data concurrent local infile '~/work/timedj/bb_juice/data/countries.dat'  into table countries character set latin1 fields terminated by ',' optionally enclosed by '"' ;
+
+# populate regions table
+load data concurrent local infile '~/work/timedj/bb_juice/data/regions.dat'  into table regions character set latin1 fields terminated by ',' optionally enclosed by '"' ;
+
+# populate cities table
+load data concurrent local infile '~/work/timedj/bb_juice/data/cities.dat'  into table cities character set latin1 fields terminated by ',' optionally enclosed by '"' ;
