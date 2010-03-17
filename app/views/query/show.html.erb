@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>
+<!--<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>-->
 <script type="text/javascript" src="/javascripts/jquery.tablehover.min.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.tabSlideOut.v1.3.js"></script>
 
@@ -10,7 +10,7 @@ $(document).ready(function()
 <% @myinputs.length.times do %>
 <%end%>
 
-$("#timetable").tablesorter();
+//$("#timetable").tablesorter();
 $("#timetable").tableHover();
 $('.feedbackpane').tabSlideOut({
             tabHandle: '.handle',                     //class of the element that will become your tab
@@ -26,6 +26,18 @@ $('.feedbackpane').tabSlideOut({
         });
 
 }); 
+
+$(function() {
+	$('tr.parent')
+		.css("cursor","pointer")
+		.attr("title","Click to expand/collapse")
+		.click(function(){
+			$(this).siblings('.child-'+this.id).toggle();
+		});
+	$('tr[@class^=child-]').hide().children('td');
+});
+
+
 </script>
 
 <!-- Move below this back into layout-->
@@ -45,7 +57,7 @@ $('.feedbackpane').tabSlideOut({
 <!-- Move above this back into layout-->
 
 
-<table id="timetable" border="1" align="center">
+<table id="timetable" align="center">
 	
     <thead>		
     <tr>
@@ -58,14 +70,35 @@ $('.feedbackpane').tabSlideOut({
     </thead>
     <tbody>
    
+	
+	
 	<%(0 .. 23).each do |i| %>
+	
+		<%  if i== 0 then
+			@tr_id = "Early_Morning"
+			 elsif (i== 17) 
+			@tr_id = "Late_Evening"
+			else
+			@tr_id=""
+			end %>
+			
+			 
+		<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id}</th>" end%>
+			
+			
+	
+		
 		<% am_pm = i < 12 ? "am" : "pm" %>
-		<%= "<tr>" %>
-		<td> <%="#{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}"%> </td>
+	
+	
+		<%= "<tr id=\"child\-#{@tr_id}\">" %>
+		<td	<%= "class=\"#{(i <0 || i>17) ? "dim_time" : "awake_time"}\"> 
+				#{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}"%> </td>
 		<%(1..(@myinputs.length-1)).each do |j|%>
 			<% tz_delta = i + @tzdeltas[j]%>
 			<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-			<%= "<td> #{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>" %>
+			<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\"> 
+			#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>" %>
 		<%end%>
 		<%= "</tr>" %>
 	<%end%>

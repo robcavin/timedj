@@ -5,37 +5,43 @@
 
 table,td
 {
-	border               : 1px solid #CCC;
+	border                :none;
+	/*border             : 1px solid #CCC;*/
 	border-collapse      : collapse;
   	font                 : small/1.2 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
-	text-align	     : center;
+	text-align	     	 : center;
 	
 }
 table
 {
-	border                :none;
-	border                :1px solid #CCC;
+ 	border                :none;
+	/*border                :1px solid #CCC;*/
 }
 thead th,
 tbody th
 {
+	border                : 1px solid #CCC;
 	background            : #FFF url(th_bck.gif) repeat-x;	color                 : #666;  
 	padding               : 5px 5px;
-	border-left           : 1px solid #CCC;
+/*	border-left           : 1px solid #CCC;*/
 	width 	      	      : 175px;
 }
 tbody th
 {
+  /*border                :none;*/
   background            : #fafafb;
-  border-top            : 1px solid #CCC;
+  /*border-top            : 1px solid #CCC;*/
   text-align            : left;
-  font-weight           : normal;
+  font-weight			: 100;
 }
 tbody tr td
 {
-	padding               : 5px 5px;
+	padding               : 2px 2px;
   	color                 : #666;
-
+	border                :none;
+	border-right 			: 1px solid #CCC;
+  	border-left 			: 1px solid #CCC;
+  
 }
 tbody tr:hover
 {
@@ -50,8 +56,9 @@ tbody tr:hover td
 tfoot td,
 tfoot th
 {
-  border-left           : none;
-  border-top            : 1px solid #CCC;
+ 	border                :none;
+  /*border-left           : none;*/
+  /*border-top            : 1px solid #CCC;*/
   padding               : 4px;
   background            : #FFF url(foot_bck.gif) repeat;
   color                 : #666;
