@@ -36,11 +36,38 @@
 </script>
 
 <div class="Title"/>
-	<img src="/images/timedj_title2.png">
+	<img src="/images/timedj_title2.png" height=89px>
 </div>
-<BR>
+<div class="LtCol" id="LtCol">
+</div>
 
 <%= yield %>
+<!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=bumblebeejuice"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=bumblebeejuice"></script>
+<!-- AddThis Button END -->
 
+<BR>
+<input type=button href="#" style="padding:0px 0px; font-size:9PX;" onClick="UserVoice.Popin.show(uservoiceOptions); return false;" value="Send Feedback"></a>
+
+<script type="text/javascript">
+  var uservoiceOptions = {
+    key: 'timedj',
+    host: 'timedj.uservoice.com', 
+    forum: '46231',
+    lang: 'en',
+    showTab: false
+  };
+  function _loadUserVoice() {
+    var s = document.createElement('script');
+    s.src = ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js";
+    document.getElementsByTagName('head')[0].appendChild(s);
+  }
+  _loadSuper = window.onload;
+  window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+</script>
+
+
+
+</div>
 </body>
 </html>

@@ -1,34 +1,35 @@
-<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>
+<script src="/javascripts/jquery.dimensions.pack.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tooltip.pack.js" type="text/javascript"></script>
 <script type="text/javascript" src="/javascripts/jquery.tablehover.min.js"></script>
-<script type="text/javascript" src="/javascripts/jquery.tabSlideOut.v1.3.js"></script>
-
 <script>
-//if (jQuery) { alert("jQuery loaded"); }
+
 $(document).ready(function() 
 { 
 
-<% @myinputs.length.times do %>
-<%end%>
-
-$("#timetable").tablesorter();
+$('#child *').tooltip({
+		});
 $("#timetable").tableHover();
-$('.feedbackpane').tabSlideOut({
-            tabHandle: '.handle',                     //class of the element that will become your tab
-            pathToTabImage: '/images/feedback_btn.png', //path to the image for the tab //Optionally can be set using css
-            imageHeight: '90px',                     //height of tab image           //Optionally can be set using css
-            imageWidth: '52px',                       //width of tab image            //Optionally can be set using css
-            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
-            speed: 300,                               //speed of animation
-            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
-            topPos: '200px',                          //position from the top/ use if tabLocation is left or right
-            leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
-            fixedPosition: false                      //options: true makes it stick(fixed position) on scroll
-        });
+$('#child *').click(function(event){
+	
+alert("Clicked it");
+//self.location ='google.com';
 
-}); 
+
+	
+})
+
+}); 	
+
 </script>
 
-<table id="timetable" border="1" align="center">
+<div class="LtCol" id="LtCol">
+Google Ads
+</div>
+
+
+<div class="CtrCol" id="CtrCol">
+
+<table id="timetable"  align="center">
 	
     <thead>		
     <tr>
@@ -40,42 +41,35 @@ $('.feedbackpane').tabSlideOut({
     </tr>
     </thead>
     <tbody>
-   
 	<%(0 .. 23).each do |i| %>
+		<%  if i== 0 then
+			@tr_id = "Early_Morning"
+			 elsif (i== 18) 
+			@tr_id = "Late_Evening"
+ 			elsif (i== 8) 
+			@tr_id = "Work_Day"
+			else
+			@tr_id=""
+			end %>
+		
+		<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2}</th>" end%>
 		<% am_pm = i < 12 ? "am" : "pm" %>
-		<%= "<tr>" %>
-		<td> <%="#{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}"%> </td>
+		<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
+		<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : "awake_time"}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
+		
 		<%(1..(@myinputs.length-1)).each do |j|%>
 			<% tz_delta = i + @tzdeltas[j]%>
 			<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-			<%= "<td> #{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>" %>
+			<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
 		<%end%>
 		<%= "</tr>" %>
 	<%end%>
-
-        </tbody>
+	
+	<tfoot>	</tfoot> 
+	
+   </tbody>
 </table>
-
-
-<div class="feedbackpane" align=center>
-	 <a class="handle" href="http://link-for-non-js-users.html">Content</a>
-
-<!-- AddThis Button BEGIN -->
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b92cfbf26eec2ab"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b92cfbf26eec2ab"></script>
-<!-- AddThis Button END -->
-
-	<HR width=100%>
-
-	<h3>Feedback</h3>
-	<input type="button" class="smilebutton" id="smilebutton1" value=":)"/>|<input type="button"  class="frownbutton" id="frownbutton1"  value=":(""/>
-	<BR><BR>
-	<textarea class="fbtext" >What's on your mind? </textarea>
-	<BR>
-	<input type="button" class="senditbutton" value="Send It!"/>
-
-	<HR width=100%>
-	<div class="Linkbar">|<a title="" href="#"  id="LinkBar_4_0">About Us</a> |
-
 </div>
 
+<div class="RtCol">	
 
