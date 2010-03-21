@@ -24,6 +24,7 @@ class QueryController < ApplicationController
      require 'json'
      require 'nokogiri'
      temp = params[:city][:name].split(/\s*[;+]+\s*/, -1)
+     temp.delete_if {|x| x == ""} # remove blank entries
 
       @myinputs = []
       lookup_params = {}

@@ -1,61 +1,75 @@
 /* Default Style Sheet for TimeDJ */
 
+html, body {
+ text-align: center;
+ font-size:14.5px;
+ font: 100% helvetica,sans-serif;
+ margin:0;
+ padding:0;
+} 
+
+div.Menu {
+ text-align: left;
+ position:relative;
+ font: 13px helvetica,sans-serif;
+ margin: 8px 8px 0px 8px;
+}
+
 div.Title {
  text-align: center;
  font-size:50px;
  font-variant:small-caps;
  position:relative;
- top:10px;
+ top:2px;
 }
 
-div.Body {
- text-align: center;
- font-size:14.5px;
- 
- } 
+div.ColContainer {
+	margin-left: 8px;
+	margin-right: 8px;
+	min-height: 200px;
+}
 
 div.LtCol,
 div.RtCol,
-div.CtrCol
-
-{
-	position: absolute;
-	top: 112px;
-	left: 4%;
-	width :15%;
-	text-align : center;
-	border-style: none;
-	bottom: 0%;
-}
-div.LtCol 
-{
-	position :absolute; 
-	Top: 60%;
-	bottom: 20%;
-	
-
+div.CtrCol {
+	font: 100% helvetica,sans-serif;
 }
 
-div.RtCol 
-{
-	position :absolute; 
-	left: 80%;
-	top:60%;
-	bottom: 20%;
-	
-	
-
+div.LtCol {
+  float: left;
+  padding: 0px 10px 0px 0px;
+  width: 110px;
 }
 
+div.CtrCol {
+  top: 10px;
+  text-align: center;
+  margin-left: 120px;
+  margin-right: 120px;
+}
 
-div.CtrCol
-{
-	background: white;
-	position: absolute;
- 	left: 20% ;
-	width : 60%;
-	border-style:none;
- }
+div.RtCol {
+  float: right;
+  padding: 0px 0px 0px 10px;
+  width: 110px;
+}
+
+div.Footer {
+  margin-top: 30px;
+  text-align: center;
+  clear: both;
+  font: small/1.1 helvetica,sans-serif;
+}
+div.Footer .line {
+	background: transparent url(../images/footer_line.png) repeat-x;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+div.Footer .copyright {
+}
+
+ 
 hr 
 {
 	margin-left: 50;
@@ -76,17 +90,18 @@ h3 {
 }
 
 td.awake_time {
-
-border: 1px;
-background:lightgreen;
-color: black;
-	
+	border: 1px;
+ 	border-right-style: solid;
+ 	border-right-color: #CCC;
+	background:lightgreen;
+	color: black;
 }
+
 td.dim_time {
- border: 1px;
- /*border-style: dashed;*/
- background:;
-	
+	 border: 1px;
+	 border-right-style: solid;
+	 border-right-color: #CCC;
+	 /*background:;*/
 }
 
 input.djinput{

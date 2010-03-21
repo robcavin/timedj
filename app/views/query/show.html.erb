@@ -1,75 +1,69 @@
 <script src="/javascripts/jquery.dimensions.pack.js" type="text/javascript"></script>
 <script src="/javascripts/jquery.tooltip.pack.js" type="text/javascript"></script>
 <script type="text/javascript" src="/javascripts/jquery.tablehover.min.js"></script>
-<script>
-
+<script type="text/javascript">
 $(document).ready(function() 
 { 
-
 $('#child *').tooltip({
 		});
 $("#timetable").tableHover();
 $('#child *').click(function(event){
 	
-alert("Clicked it");
-//self.location ='google.com';
-
-
-	
+/*alert("Feature coming soon...");*/
 })
-
 }); 	
-
 </script>
 
-<div class="LtCol" id="LtCol">
-Google Ads
+<div class="ColContainer">
+
+<div class="LtCol">
+</div>	
+
+<div class="RtCol"> 
 </div>
 
-
-<div class="CtrCol" id="CtrCol">
-
-<table id="timetable"  align="center">
-	
-    <thead>		
-    <tr>
-	<%@myinputs.each do |i| %>
-        	<%= "<th> #{i.utf8_name},"%>
-        	<%= "#{i.country.name}<BR>" %>
-        	<%= "#{i.time_zone.name} </th>" %> 
-	<%end%>     
-    </tr>
-    </thead>
-    <tbody>
-	<%(0 .. 23).each do |i| %>
-		<%  if i== 0 then
-			@tr_id = "Early_Morning"
-			 elsif (i== 18) 
-			@tr_id = "Late_Evening"
- 			elsif (i== 8) 
-			@tr_id = "Work_Day"
-			else
-			@tr_id=""
-			end %>
+<div class="CtrCol" id="CtrCol" style="margin-top:10px;">
+	<table id="timetable"  align="center">
 		
-		<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2}</th>" end%>
-		<% am_pm = i < 12 ? "am" : "pm" %>
-		<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
-		<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : "awake_time"}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
-		
-		<%(1..(@myinputs.length-1)).each do |j|%>
-			<% tz_delta = i + @tzdeltas[j]%>
-			<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-			<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
+	    <thead>		
+	    <tr>
+		<%@myinputs.each do |i| %>
+	        	<%= "<th> #{i.utf8_name},<BR>"%>
+	        	<%= "#{i.country.name}<BR>" %>
+	        	<%= "(#{i.time_zone.name})</th>" %> 
+		<%end%>     
+	    </tr>
+	    </thead>
+	    <tbody>
+		<%(0 .. 23).each do |i| %>
+			<%  if i== 0 then
+				@tr_id = "Early_Morning"
+				 elsif (i== 18) 
+				@tr_id = "Late_Evening"
+	 			elsif (i== 8) 
+				@tr_id = "Work_Day"
+				else
+				@tr_id=""
+				end %>
+			
+			<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2}</th>" end%>
+			<% am_pm = i < 12 ? "am" : "pm" %>
+			<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
+			<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : "awake_time"}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
+			
+			<%(1..(@myinputs.length-1)).each do |j|%>
+				<% tz_delta = i + @tzdeltas[j]%>
+				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
+				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
+			<%end%>
+			<%= "</tr>" %>
 		<%end%>
-		<%= "</tr>" %>
-	<%end%>
-	
-	<tfoot>	</tfoot> 
-	
-   </tbody>
-</table>
+		
+		<tfoot>	</tfoot> 
+		
+	   </tbody>
+	</table>
 </div>
 
-<div class="RtCol">	
+</div>
 

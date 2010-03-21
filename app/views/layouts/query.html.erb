@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -17,12 +16,10 @@
 <script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
 
 <title>TimeDJ.com - Time Zone Meeting Planner</title>
-
 </head>
 
 <body>
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-15295053-1']);
   _gaq.push(['_trackPageview']);
@@ -32,22 +29,23 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
-
 </script>
 
-<div class="Title"/>
-	<img src="/images/timedj_title2.png" height=89px>
+<div class="Menu"/>
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=bumblebeejuice"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0;"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=bumblebeejuice"></script>
+<a href="#" onClick="UserVoice.Popin.show(uservoiceOptions); return false;"><img src="/images/feedback_menu.png" width="65" height="13" alt="Feedback" style="border:0; margin-left:5px;"/></a>
 </div>
-<div class="LtCol" id="LtCol">
+
+<div class="Title"/>
+	<img src="/images/timedj_title3.png" alt="TimeDJ.com - Time Zone Meeting Planner">
 </div>
 
 <%= yield %>
-<!-- AddThis Button BEGIN -->
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=bumblebeejuice"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=bumblebeejuice"></script>
-<!-- AddThis Button END -->
 
-<BR>
-<input type=button href="#" style="padding:0px 0px; font-size:9PX;" onClick="UserVoice.Popin.show(uservoiceOptions); return false;" value="Send Feedback"></a>
+<div class="Footer">
+	<div class="line"></div>
+	<div class="copyright">Copyright &copy; 2010 TimeDJ.com, All rights reserved.</div>	
+</div>
 
 <script type="text/javascript">
   var uservoiceOptions = {
@@ -65,9 +63,5 @@
   _loadSuper = window.onload;
   window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
 </script>
-
-
-
-</div>
 </body>
 </html>

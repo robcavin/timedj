@@ -8,9 +8,9 @@ table,td
 	border                :none;
 	/*border             : 1px solid #CCC;*/
 	border-collapse      : collapse;
-  	font                 : small/1.1 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+  	/*font                 : small/1.1 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;*/
+	font                 : small/1.1 Helvetica, sans-serif;
 	text-align	     	 : center;
-
 }
 table
 {
@@ -24,8 +24,8 @@ tfoot th
 	border                : 0px solid #CCC;
 	background            : #FFF ;	color                 : #666;  
 	padding               : 3px 5px;
-/*	border-left           : 1px solid #CCC;*/
-	width 	      	      : 150px;
+	border-left           : 1px solid #CCC;
+	min-width 	      	  : 100px;
 }
 tfoot th
 {
@@ -38,7 +38,7 @@ tfoot th
 tbody th
 {
   border                : 1px solid #ccc; 
-  background            : #fafafb;
+  background            : #f1f1f2; /*#fafafb;*/
   /*border-top          : 1px solid #CCC;*/
   text-align            : left;
   font-weight			: 100;
@@ -52,16 +52,12 @@ tbody tr td
 	border                :none;
 	border-right 			: 1px solid #CCC;
   	border-left 			: 1px solid #CCC;
-  
 }
 
 tbody tr:hover td
 {
-  color                 : #454545;
-  background            : orange;
-  
-
-
+  color                 : black; /*#454545;*/
+  background            : #f48338 /*orange;*/
 }
 tfoot td,
 {

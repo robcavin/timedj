@@ -17,6 +17,10 @@ class City < ActiveRecord::Base
     # If the city has a time zone mapped in the db, print it out
     city_country_tz += " (#{self.time_zone.name})" if (self.time_zone) 
     
+    # this is a bad hack to make sure the seperator value is include
+    # need to figure out how auto-complete can append this once a selection is selected
+    city_country_tz += "; "
+    
     # Return the array
     city_country_tz
   end
