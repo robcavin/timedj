@@ -28,8 +28,9 @@ tfoot th
 	border-right           : 1px solid #CCC;
 	min-width 	      	  : 100px;
 }
-tfoot th tr	td	
+tfoot tr td	
 {
+	color                 : #666;
 	border-top            : 1px solid #CCC;
 	background            : #FFF ;	color                 : #666;  
 /*	padding               : 3px 5px;

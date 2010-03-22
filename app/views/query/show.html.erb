@@ -49,6 +49,7 @@ $('#child *').click(function(event){
 			<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2}</th>" end%>
 			<% am_pm = i < 12 ? "am" : "pm" %>
 			<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
+			<%= if i==23 then "<tfoot>" end%>
 			<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : "awake_time"}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
 			<%(1..(@myinputs.length-1)).each do |j|%>
@@ -57,9 +58,8 @@ $('#child *').click(function(event){
 				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
 			<%end%>
 			<%= "</tr>" %>
+			<%= if i==23 then "</tfoot>" end%>
 		<%end%>
-		
-		<tfoot><tr><td></td><td></td></tr></tfoot> 
 		
 	   </tbody>
 	</table>
