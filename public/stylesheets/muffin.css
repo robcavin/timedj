@@ -25,9 +25,10 @@ tfoot th
 	background            : #FFF ;	color                 : #666;  
 	padding               : 3px 5px;
 	border-left           : 1px solid #CCC;
+	border-right           : 1px solid #CCC;
 	min-width 	      	  : 100px;
 }
-tfoot th
+tfoot th tr	td	
 {
 	border-top            : 1px solid #CCC;
 	background            : #FFF ;	color                 : #666;  
@@ -59,15 +60,7 @@ tbody tr:hover td
   color                 : black; /*#454545;*/
   background            : #f48338 /*orange;*/
 }
-tfoot td,
-{
-  border                :none;
-  /*border-left           : none;*/
-  /*border-top            : 1px solid #CCC;*/
-  padding               : 4px;
-  background            : #FFF url(foot_bck.gif) repeat;
-  color                 : #666;
-}
+
 caption
 {
 	text-align            : left;
