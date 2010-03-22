@@ -37,6 +37,14 @@ tfoot tr td
 /*	border-left           : 1px solid #CCC;*/
 	width 	      	      : 150px;
 }
+tfoot tr:hover td
+{
+  color                 : black; /*#454545;*/
+  background            : #f48338 /*orange;*/
+}
+
+
+
 tbody th
 {
   border                : 1px solid #ccc; 
