@@ -28,21 +28,14 @@ tfoot th
 	border-right           : 1px solid #CCC;
 	min-width 	      	  : 100px;
 }
-tfoot tr td	
-{
-	color                 : #666;
-	border-top            : 1px solid #CCC;
-	background            : #FFF ;	color                 : #666;  
-/*	padding               : 3px 5px;
-/*	border-left           : 1px solid #CCC;*/
-	width 	      	      : 150px;
-}
-tfoot tr:hover td
-{
-  color                 : black; /*#454545;*/
-  background            : #f48338 /*orange;*/
-}
 
+tfoot tr,
+tfoot td	
+{
+	padding               : 1px 1px;
+  	color                 : #666;
+	border                :none;	
+}
 
 
 tbody th
@@ -55,7 +48,8 @@ tbody th
   color					: black;
   /*padding				: 2px 2px;*/
 }
-tbody tr td
+tbody tr, 
+tbody td
 {
 	padding               : 1px 1px;
   	color                 : #666;
@@ -64,7 +58,8 @@ tbody tr td
   	border-left 			: 1px solid #CCC;
 }
 
-tbody tr:hover td
+tbody tr:hover td, 
+tfoot tr:hover td
 {
   color                 : black; /*#454545;*/
   background            : #f48338 /*orange;*/
@@ -89,6 +84,3 @@ table a:active
 {
 	color                 : #003366;
 }
-
-
-
