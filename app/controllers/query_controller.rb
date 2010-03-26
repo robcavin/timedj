@@ -34,6 +34,7 @@ class QueryController < ApplicationController
         # if 3 then it's city, region, country
         # if 2 then it's city, country
         # if 1 then it's city
+        ordering = nil   # ordering ensures that if they specify a city that is in other countries we pick the most populated one first
         case my_params.size
           when 3
             city = my_params[0]
@@ -42,15 +43,24 @@ class QueryController < ApplicationController
           when 2
             city = my_params[0]
             country = my_params[1]
+            ordering = "population DESC"
           when 1
             city = my_params[0]
+            ordering = "population DESC"
           else
             # we need to do something if the params are bad
         end
         lookup_params[:name] = city.strip.squeeze(' ')
         lookup_params[:region_id] = Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) if region        
         lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
-        @myinputs.push(City.find(:first,:conditions => lookup_params))
+        city = City.find(:first, :conditions => lookup_params, :order => ordering)
+        # check if we were able to find this city
+        # if the user didn't use autocomplete chances are we may have a problem processing the result
+        if !city
+          flash[:error] = "Sorry, we didn't understand the following city/country you entered:<br>#{i}"
+          redirect_to :action => 'index' and return
+        end
+        @myinputs.push(city)
       end
 
       count = 0
