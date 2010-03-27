@@ -22,6 +22,7 @@ class QueryController < ApplicationController
      require 'net/http'
      require 'json'
      require 'nokogiri'
+     require 'date'
      temp = params[:city][:name].split(/\s*[;+]+\s*/, -1)
      temp.delete_if {|x| x == ""} # remove blank entries
 
@@ -50,7 +51,7 @@ class QueryController < ApplicationController
             # we need to do something if the params are bad
         end
         lookup_params[:name] = city.strip.squeeze(' ')
-        lookup_params[:region_id] = Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) if region        
+        lookup_params[:region_id] = region ? Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) : nil        
         lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
         city = City.find(:first, :conditions => lookup_params, :order => ordering)
         # check if we were able to find this city
@@ -103,8 +104,16 @@ class QueryController < ApplicationController
       end
       
       @tzdeltas = []
+      my_date = `zdump #{@myinputs[0].time_zone.timezoneID}`.split(/\s+/)
+      my_hr_min_sec = my_date[4].split(":")
+      datetime0 = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
+      
       @myinputs.each do |i|
-        @tzdeltas.push(i.time_zone.offset - @myinputs[0].time_zone.offset) if i.time_zone
+        my_date = `zdump #{i.time_zone.timezoneID}`.split(/\s+/)
+        my_hr_min_sec = my_date[4].split(":")
+        my_datetime = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
+        hours,minutes,seconds = Date.day_fraction_to_time(my_datetime - datetime0)
+        @tzdeltas.push(hours) 
       end
       
       # find and return a specific message
