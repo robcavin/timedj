@@ -93,11 +93,11 @@ module AutoCompleteMacrosHelper
   #
   # The auto_complete_result can of course also be called from a view belonging to the 
   # auto_complete action if you need to decorate it further.
-  def auto_complete_result(entries, field, phrase = nil)
+  def auto_complete_result(entries, method, phrase = nil)
     return unless entries
     items = []
     entries.each do |entry| 
-      entry_list = entry.send(field)
+      entry_list = entry.send(method)
       entry_list.each do |sub_entry|
         items.push(content_tag("li", phrase ? highlight(sub_entry, phrase) : h(sub_entry)))
       end

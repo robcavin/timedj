@@ -1,7 +1,6 @@
 class QueryController < ApplicationController
 
   auto_complete_for :city, :name
-  auto_complete_for :city, :name_w_country
 
   def index
      #@cities = City.find(:all)
