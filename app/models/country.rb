@@ -14,7 +14,13 @@ class Country < ActiveRecord::Base
         if (city_i.time_zone)  # Watch out as NULL is a distinct time zone!! (this probably isn't needed anymore
           # we just have the timezone so find the city the greatest population for that timezone
           top_pop_city_w_time_zone = City.find(:all, :conditions => "cities.country_id = #{self.id} AND time_zone_id = #{city_i.time_zone_id}", :order => "population DESC", :limit => 1).first
-          country_city_tz.push("#{top_pop_city_w_time_zone.utf8_name}, #{top_pop_city_w_time_zone.region.name}, #{self.name} (#{city_i.time_zone.name})") 
+          if (top_pop_city_w_time_zone)
+            thing_to_push = "#{top_pop_city_w_time_zone.utf8_name}, "
+            thing_to_push += "#{top_pop_city_w_time_zone.region.name}, " if (top_pop_city_w_time_zone.region)
+            thing_to_push += "#{self.name} (#{city_i.time_zone.name});"
+            country_city_tz.push(thing_to_push)
+            #country_city_tz.push("#{top_pop_city_w_time_zone.utf8_name}, #{top_pop_city_w_time_zone.region.name}, #{self.name} (#{city_i.time_zone.name})")
+          end          
         end
       end
       
