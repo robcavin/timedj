@@ -1,20 +1,75 @@
 /* Default Style Sheet for TimeDJ */
 
+html, body {
+ text-align: center;
+ font-size:14.5px;
+ font: 100% helvetica,sans-serif;
+ margin:0;
+ padding:0;
+} 
+
+div.Menu {
+ text-align: left;
+ position:relative;
+ font: 13px helvetica,sans-serif;
+ margin: 8px 8px 0px 8px;
+}
+
 div.Title {
  text-align: center;
  font-size:50px;
  font-variant:small-caps;
  position:relative;
- top:10px;
+ top:2px;
 }
 
-div.Body {
- text-align: center;
- font-size:14.5px;
- position:relative;
- top:0px;
- } 
+div.ColContainer {
+	margin-left: 8px;
+	margin-right: 8px;
+	min-height: 270px;
+}
 
+div.LtCol,
+div.RtCol,
+div.CtrCol {
+	font: 100% helvetica,sans-serif;
+}
+
+div.LtCol {
+  float: left;
+  padding: 0px 10px 0px 0px;
+  width: 110px;
+}
+
+div.CtrCol {
+  top: 10px;
+  text-align: center;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+div.RtCol {
+  float: right;
+  padding: 0px 0px 0px 10px;
+  width: 110px;
+}
+
+div.Footer {
+  margin-top: 30px;
+  text-align: center;
+  clear: both;
+  font: small/1.1 helvetica,sans-serif;
+}
+div.Footer .line {
+	background: transparent url(../images/footer_line.png) repeat-x;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+div.Footer .copyright {
+}
+
+ 
 hr 
 {
 	margin-left: 50;
@@ -22,45 +77,10 @@ hr
 	width: 90%;
 }
 
-div.Linkbar {
- text-align: center;
- font-size:10px;
- position:relative;
- top:0px;
- } 
+div.externals{
+	position:relative; left:25%; top:60px; width: 50%; height:140px; 
+}
       
-div.feedbackpane {
-          padding: 20px;
-          width: 150px;
-          background: white;
-          border: 1px solid #29216d;
-	  height: 170px; 
-      }      
-input.smilebutton {
-	color:#050; 
-	  font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
-	  background-color:lightgreen; 
-	  border:1px solid; 
-	  border-color: #696 #363 #363 #696; 
-	
-}
-                  
-input.frownbutton {
-
-	color:#050; 
-	  font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
-	  background-color:pink; 
-	  border:1px solid; 
-	  border-color: #696 #363 #363 #696; 
-}
-
-input.fbtext {
-	style="position:relative; top:10px;";
-}
-
-.Linkbar{
-	style="position:relative; top:15px;";
-}
 
 h3 {
  text-align: center;
@@ -69,5 +89,21 @@ h3 {
  top:0px;
 }
 
+td.awake_time {
+	border: 1px;
+ 	border-right-style: solid;
+ 	border-right-color: #CCC;
+	background:lightgreen;
+	color: black;
+}
 
+td.dim_time {
+	 border: 1px;
+	 border-right-style: solid;
+	 border-right-color: #CCC;
+	 /*background:;*/
+}
 
+input.djinput{
+	background: blue;
+}

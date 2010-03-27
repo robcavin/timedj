@@ -1,47 +1,31 @@
-
-
-<!-- Move below this back into layout-->
-
 <%= javascript_include_tag :defaults %>
 
-<title>TimeDJ</title>
+<div class="ColContainer">
 
-</head>
+<div class="LtCol">
+</div>	
 
-<body>
-
-<div class="Title"/>
-	<img src="/images/timedj_title.png">
-
+<div class="RtCol"> 
 </div>
 
-</div>
-<BR>
-
-
-<!-- Move above this back into layout-->
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="Body">
-
+<div class="CtrCol"> 
 <%= form_tag(query_path(1),:method => :get)%>
 
 <%= text_field_with_auto_complete :city, :name, 
-	{:tabindex => 0, :size => 65}, {:tokens => [';','+'], :min_chars => '3', :method => :get} %>
-	<input type="image" src="/images/dj_button.png" alt="GO!" style="position:relative; left:5px; top:20px">
+	{:tabindex => 0, :style => "width: 80%; max-width: 600px"}, {:tokens => [';','+'], :min_chars => '3', :method => :get, :order => 'population DESC'} %>
+	<input  type="image" src="/images/dj_button2.png" alt="GO!" style="position:relative; left:5px; top:20px">
 <br>
-<span style="color: silver"> Type the City, Country, Time Zone or Airport Codes </span>
+<span style="position: relative; left:-5%; color: #999999; z-index:-5"> Type in the City or Country for each participant in your meeting. 
+<br>Example:  San Francisco, United States; Paris, France 
+</span>
+
+<% if flash[:error] %>
+<br><br>
+<span style="position: relative; left:-5%; z-index:-5">
+	<%= flash[:error] %>
+</span>
+<% end %>
 
 </div>
 
-
+</div>

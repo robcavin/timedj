@@ -5,57 +5,66 @@
 
 table,td
 {
-	border               : 1px solid #CCC;
+	border                :none;
+	/*border             : 1px solid #CCC;*/
 	border-collapse      : collapse;
-  	font                 : small/1.2 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
-	text-align	     : center;
-	
+  	/*font                 : small/1.1 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;*/
+	font                 : small/1.1 Helvetica, sans-serif;
+	text-align	     	 : center;
 }
 table
 {
-	border                :none;
+ 	border                :none;
 	border                :1px solid #CCC;
 }
 thead th,
-tbody th
-{
-	background            : #FFF url(th_bck.gif) repeat-x;	color                 : #666;  
-	padding               : 5px 5px;
-	border-left           : 1px solid #CCC;
-	width 	      	      : 175px;
-}
-tbody th
-{
-  background            : #fafafb;
-  border-top            : 1px solid #CCC;
-  text-align            : left;
-  font-weight           : normal;
-}
-tbody tr td
-{
-	padding               : 5px 5px;
-  	color                 : #666;
-
-}
-tbody tr:hover
-{
-  background            : #FFF url(tr_bck.gif) repeat;
-}
-
-tbody tr:hover td
-{
-  color                 : #454545;
-  background            : orange;
-}
-tfoot td,
+tbody th,
 tfoot th
 {
-  border-left           : none;
-  border-top            : 1px solid #CCC;
-  padding               : 4px;
-  background            : #FFF url(foot_bck.gif) repeat;
-  color                 : #666;
+	border                : 0px solid #CCC;
+	background            : #FFF ;	color                 : #666;  
+	padding               : 3px 5px;
+	border-left           : 1px solid #CCC;
+	border-right           : 1px solid #CCC;
+	min-width 	      	  : 100px;
 }
+
+tfoot tr,
+tfoot td	
+{
+	padding               : 1px 1px;
+  	color                 : #666;
+	border                :none;	
+}
+
+
+tbody th
+{
+  border                : 1px solid #ccc; 
+  background            : #f1f1f2; /*#fafafb;*/
+  /*border-top          : 1px solid #CCC;*/
+  text-align            : left;
+  font-weight			: 100;
+  color					: black;
+  /*padding				: 2px 2px;*/
+}
+tbody tr, 
+tbody td
+{
+	padding               : 1px 1px;
+  	color                 : #666;
+	border                :none;
+	border-right 			: 1px solid #CCC;
+  	border-left 			: 1px solid #CCC;
+}
+
+tbody tr:hover td, 
+tfoot tr:hover td
+{
+  color                 : black; /*#454545;*/
+  background            : #f48338 /*orange;*/
+}
+
 caption
 {
 	text-align            : left;
@@ -71,20 +80,7 @@ table a:visited
 {
 	color                 : #666;
 }
-table a:hover
-{
-	color                 : #003366;
-	text-decoration       : none;
-}
 table a:active
 {
 	color                 : #003366;
 }
-
-table thead tr .headerSortUp {
-	background-image: url(/images/asc.gif);
-}
-table thead tr .headerSortDown {
-	background-image: url(/images/desc.gif);
-}
-
