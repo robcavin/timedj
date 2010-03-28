@@ -55,7 +55,7 @@ $('#child *').click(function(event){
 			<%(1..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
 				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : "awake_time"}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
+				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : ((i < 8 || i > 17) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
 			<%end%>
 			<%= "</tr>" %>
 			<%= if i==23 then "</tfoot>" end%>

@@ -97,6 +97,13 @@ td.awake_time {
 	color: black;
 }
 
+td.dim_awake_time {
+	border: 1px;
+ 	border-right-style: solid;
+ 	border-right-color: #CCC;
+	background:#D0FFD0;
+}
+
 td.dim_time {
 	 border: 1px;
 	 border-right-style: solid;
