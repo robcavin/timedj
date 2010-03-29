@@ -20,45 +20,50 @@ div.Title {
  font-size:50px;
  font-variant:small-caps;
  position:relative;
- top:2px;
+ top:3px;
 }
 
 div.ColContainer {
 	margin-left: 8px;
 	margin-right: 8px;
-	min-height: 270px;
+	min-height: 370px;
 }
 
 div.LtCol,
 div.RtCol,
 div.CtrCol {
-	font: 100% helvetica,sans-serif;
+	font: 14.5px helvetica,sans-serif;
 }
 
 div.LtCol {
   float: left;
   padding: 0px 10px 0px 0px;
-  width: 110px;
+  width: 170px;
 }
 
 div.CtrCol {
   top: 10px;
   text-align: center;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 180px;
+  margin-right: 180px;
 }
 
 div.RtCol {
   float: right;
   padding: 0px 0px 0px 10px;
-  width: 110px;
+  width: 170px;
 }
 
 div.Footer {
+  position: relative;
+  bottom: 0%;
+  width: 100%;
   margin-top: 30px;
+  padding-bottom: 5px;
   text-align: center;
   clear: both;
   font: small/1.1 helvetica,sans-serif;
+  background: white;
 }
 div.Footer .line {
 	background: transparent url(../images/footer_line.png) repeat-x;
@@ -67,8 +72,13 @@ div.Footer .line {
 	padding: 0;
 }
 div.Footer .copyright {
+	color:#333333;
 }
 
+div.InfoImage {
+	margin: 10px, 10px, 10px, 10px;
+	float: left;
+}
  
 hr 
 {
@@ -115,3 +125,19 @@ td.dim_time {
 input.djinput{
 	background: blue;
 }
+
+div.InfoBox {
+	border: none;
+	color:#333333;
+	line-height:1.25em;
+	text-align: left;
+}
+.t {background: url(/images/tn.png) 0 0 repeat-x; width: 100%; margin-left:auto; margin-right:auto;}
+.b {background: url(/images/ts.png) 0 100% repeat-x}
+.l {background: url(/images/tw.png) 0 0 repeat-y}
+.r {background: url(/images/te.png) 100% 0 repeat-y}
+.bl {background: url(/images/tbl_w.png) 0 100% no-repeat}
+.br {background: url(/images/tbr_w.png) 100% 100% no-repeat}
+.tl {background: url(/images/tpl_w.png) 0 0 no-repeat}
+.tr {background: url(/images/tpr_w.png) 100% 0 no-repeat; padding:10px; padding-left: 9%} 
+
