@@ -1,6 +1,6 @@
 class QueryController < ApplicationController
 
-  auto_complete_for :city, :name, {:order => 'population DESC'}
+  auto_complete_for :city, :name
 
   def index
      #@cities = City.find(:all)
@@ -35,6 +35,7 @@ class QueryController < ApplicationController
         # if 2 then it's city, country
         # if 1 then it's city
         ordering = nil   # ordering ensures that if they specify a city that is in other countries we pick the most populated one first
+        lookup_params = {}
         case my_params.size
           when 3
             city = my_params[0]
@@ -42,18 +43,22 @@ class QueryController < ApplicationController
             country = my_params[2]
           when 2
             city = my_params[0]
+            region = nil
             country = my_params[1]
             ordering = "population DESC"
           when 1
             city = my_params[0]
+            region = nil
+            country = nil
             ordering = "population DESC"
           else
             # we need to do something if the params are bad
         end
         lookup_params[:name] = city.strip.squeeze(' ')
-        lookup_params[:region_id] = region ? Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) : nil        
+        lookup_params[:region_id] = Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) if region        
         lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
         city = City.find(:first, :conditions => lookup_params, :order => ordering)
+
         # check if we were able to find this city
         # if the user didn't use autocomplete chances are we may have a problem processing the result
         if !city
@@ -116,6 +121,18 @@ class QueryController < ApplicationController
         @tzdeltas.push(hours) 
       end
       
+      @min_good_hour = 8
+      @max_good_hour = 17
+      
+      @tzdeltas[1..(@tzdeltas.length-1)].each do |i|
+        min_hour = (8 - i)%24
+        if (min_hour > 17) then min_hour -= 24 end
+        max_hour = (min_hour + 9)
+        @min_good_hour = [min_hour, @min_good_hour].max;
+        @max_good_hour = [max_hour, @max_good_hour].min;
+      end
+      #if @max_good_hour < @min_good_hour then @max_good_hour = 17 end
+        
       # find and return a specific message
     end
 

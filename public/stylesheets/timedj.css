@@ -95,6 +95,7 @@ td.awake_time {
  	border-right-color: #CCC;
 	background:lightgreen;
 	color: black;
+	font-weight:bold;
 }
 
 td.dim_awake_time {

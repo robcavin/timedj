@@ -34,6 +34,7 @@ $('#child *').click(function(event){
 	    </tr>
 	    </thead>
 	    <tbody>
+
 		<%(0 .. 23).each do |i| %>
 			<%  if i== 0 then
 				@tr_id = "Early_Morning"
@@ -45,17 +46,22 @@ $('#child *').click(function(event){
 				@tr_id=""
 				end %>
 			
-			<%= if (@tr_id !="") then "<th colspan=100% class=parent id=#{@tr_id}> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2}</th>" end%>
+			<%= if (@tr_id !="") 
+				line = "<th colspan=100% class=parent id=#{@tr_id} "
+				line += "style='font-weight: bold' " if (@tr_id == "Work_Day") 
+				line += "> #{@tr_id=~ %r{(.*)_(.*)}; $1+" "+$2} </th>"
+				line 
+			end%>
 			<% am_pm = i < 12 ? "am" : "pm" %>
 			<%= if i==23 then "<tfoot>" end%>			
 			<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
 			
-			<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : "awake_time"}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
+			<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
 			<%(1..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
 				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : ((i < 8 || i > 17) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
+				<%= "<td class=\"#{(tz_delta <8 || (tz_delta>17 && tz_delta <32)) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
 			<%end%>
 			<%= "</tr>" %>
 			<%= if i==23 then "</tfoot>" end%>
