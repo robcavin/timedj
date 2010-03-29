@@ -135,6 +135,14 @@ class QueryController < ApplicationController
         
       # find and return a specific message
     end
+    
+    def about_us
+      # page to display information about timedj.com
+    end
+    
+    def contact
+      # page with our contact info
+    end
 
     # GET edit_message_url(:id => 1)
     def edit
