@@ -59,6 +59,19 @@ class QueryController < ApplicationController
         lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
         city = City.find(:first, :conditions => lookup_params, :order => ordering)
 
+        if !city && my_params.size == 2
+          # Try one more time assuming only city and region
+          city = my_params[0]
+          region = my_params[1]
+          country = nil
+          ordering = "population DESC"
+          lookup_params = {}
+          lookup_params[:name] = city.strip.squeeze(' ')
+          lookup_params[:region_id] = Region.find(:first, :conditions => {:name => region.strip.squeeze(' ')}) if region        
+          lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
+          city = City.find(:first, :conditions => lookup_params, :order => ordering)          
+        end
+
         # check if we were able to find this city
         # if the user didn't use autocomplete chances are we may have a problem processing the result
         if !city
