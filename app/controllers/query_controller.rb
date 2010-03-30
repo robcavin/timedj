@@ -85,7 +85,7 @@ class QueryController < ApplicationController
 'au'  => 'australia'
 }
 
-     temp = params[:city][:name].strip.split(/\s*[;+]+\s*/, -1)
+     temp = params[:city][:name].strip.downcase.split(/\s*[;+]+\s*/, -1)
      temp.delete_if {|x| x == ""} # remove blank entries
      
      # make sure the user didn't enter anything. n00b
