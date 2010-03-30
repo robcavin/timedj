@@ -23,6 +23,68 @@ class QueryController < ApplicationController
      require 'json'
      require 'nokogiri'
      require 'date'
+    
+    abbrev_to_region = {
+'al' => 'alabama',
+'ak' => 'alaska',
+'az' => 'arizona',
+'ar' => 'arkansas',
+'ca' => 'california',
+'co' => 'colorado',
+'ct' => 'connecticut',
+'dc' => 'district of columbia',
+'de' => 'delaware',
+'fl' => 'florida',
+'ga' => 'georgia',
+'hi' => 'hawaii',
+'id' => 'idaho',
+'il' => 'illinois',
+'in' => 'indiana',
+'ia' => 'iowa',
+'ks' => 'kansas',
+'ky' => 'kentucky',
+'la' => 'louisiana',
+'me' => 'maine',
+'md' => 'maryland',
+'ma' => 'massachusetts',
+'mi' => 'michigan',
+'mn' => 'minnesota',
+'ms' => 'mississippi',
+'mo' => 'missouri',
+'mt' => 'montana',
+'ne' => 'nebraska',
+'nv' => 'nevada',
+'nh' => 'new hampshire',
+'nj' => 'new jersey',
+'nm' => 'new mexico',
+'ny' => 'new york',
+'nc' => 'north carolina',
+'nd' => 'north dakota',
+'oh' => 'ohio',
+'ok' => 'oklahoma',
+'or' => 'oregon',
+'pa' => 'pennsylvania',
+'ri' => 'rhode island',
+'sc' => 'south carolina',
+'sd' => 'south dakota',
+'tn' => 'tennessee',
+'tx' => 'texas',
+'ut' => 'utah',
+'vt' => 'vermont',
+'va' => 'virginia',
+'wa' => 'washington',
+'wv' => 'west virginia',
+'wi' => 'wisconsin',
+'wy' => 'wyoming' }
+
+    abbrev_to_country = {
+'us'  => 'united states',
+'usa'  => 'united states',
+'uk'  => 'united kingdom',
+'uae' => 'united arab emirates',
+'au'  => 'australia'
+}
+
      temp = params[:city][:name].split(/\s*[;+]+\s*/, -1)
      temp.delete_if {|x| x == ""} # remove blank entries
 
@@ -39,12 +101,12 @@ class QueryController < ApplicationController
         case my_params.size
           when 3
             city = my_params[0]
-            region = my_params[1]
-            country = my_params[2]
+            region = abbrev_to_region[my_params[1].strip] || my_params[1]
+            country = abbrev_to_country[my_params[2].strip] || my_params[2]
           when 2
             city = my_params[0]
             region = nil
-            country = my_params[1]
+            country = abbrev_to_country[my_params[1].strip] || my_params[1]
             ordering = "population DESC"
           when 1
             city = my_params[0]
@@ -59,10 +121,11 @@ class QueryController < ApplicationController
         lookup_params[:country_id] = Country.find(:first, :conditions => {:name => country.gsub(/\(.*/,"").strip.squeeze(' ')}) if country
         city = City.find(:first, :conditions => lookup_params, :order => ordering)
 
+        # Try one more time assuming only city and region
+        # This should be much more elegant... 
         if !city && my_params.size == 2
-          # Try one more time assuming only city and region
           city = my_params[0]
-          region = my_params[1]
+          region = abbrev_to_region[my_params[1].strip] || my_params[1]
           country = nil
           ordering = "population DESC"
           lookup_params = {}
