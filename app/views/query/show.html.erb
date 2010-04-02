@@ -1,6 +1,11 @@
+<style type="text/css">@import "/stylesheets/jquery.datepick.css";</style> 
+<style type="text/css">@import "/stylesheets/jquery.icalendar.css";</style> 
+
 <script src="/javascripts/jquery.dimensions.pack.js" type="text/javascript"></script>
 <script src="/javascripts/jquery.tooltip.pack.js" type="text/javascript"></script>
 <script type="text/javascript" src="/javascripts/jquery.tablehover.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.icalendar.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.datepick.min.js"></script>                 
 <script type="text/javascript">
 $(document).ready(function() 
 { 
@@ -12,6 +17,53 @@ $('#child *').click(function(event){
 })
 }); 	
 </script>
+<script type="text/javascript">
+ 
+    //$(document).ready(function(){   
+    //    $("#button").click(function(){
+    //        $("#pane").style.display = 'show';
+    //        alert("E");
+    //    });        
+    //});
+        
+    function setDateFromDialog(date){
+        var starthour = $('#starthour').val()
+        var duration = $('#duration').val()
+        
+        mystarthour = (starthour) ? time : 12;
+        myduration = (duration) ? duration : 90;
+        
+        var StartDate = new Date(date)
+        var EndDate = StartDate
+        
+        StartDate.setHours(mystarthour)
+        EndDate.setHours(StartDate.getHours() + myduration / 60)
+        EndDate.setMinutes(StartDate.getMinutes() + myduration % 60)
+        //console.log(EndDate)        
+        
+        var TimeDJEvent = {
+            start: StartDate,
+            end: EndDate,
+            title: 'Your Meeting',
+            description: 'This Meeting was planned using The TimeDJ. Checkout timedj.com for more details',
+            location: 'On your local beach'
+        };
+        
+        $('#basicICal').icalendar($.extend({
+            icons: '/images/icalendar.png',
+			compact: true,
+            sites: ['yahoo', 'google'] //, 'outlook'],
+            //echoUrl: "/iCalEcho.rb"
+        }, TimeDJEvent))
+        $('#basicICal').icalendar('change', TimeDJEvent);
+    }
+    
+    $(function(){
+        $('#dialogButton123').datepick({
+            onClose: setDateFromDialog
+        })
+    });
+</script>
 
 <div class="ColContainer">
 
@@ -19,11 +71,18 @@ $('#child *').click(function(event){
 </div>	
 
 <div class="RtCol"> 
+       <div class="pane" style="">
+           Meeting date: <input class="Body" type="input" size=5 id="dialogButton123" value="">
+           </input>
+           <div id="basicICal">
+           </div>
+       </div>
 </div>
 
 <div class="CtrCol" id="CtrCol" style="margin-top:10px;">
-	<table id="timetable"  align="center">
-		
+	
+    <div class="Muffin">
+        <table id="timetable" align="center">
 	    <thead>		
 	    <tr>
 		<%@myinputs.each do |i| %>
@@ -68,8 +127,10 @@ $('#child *').click(function(event){
 		<%end%>
 		
 	   </tbody>
-	</table>
+       </table>
+       </div>	   
+       <!-- closing Muffin-->
+	   
 </div>
 
 </div>
-

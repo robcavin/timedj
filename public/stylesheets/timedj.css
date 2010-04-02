@@ -100,29 +100,6 @@ h3 {
 }
 */
 
-td.awake_time {
-	border: 1px;
- 	border-right-style: solid;
- 	border-right-color: #CCC;
-	background:lightgreen;
-	color: black;
-	font-weight:bold;
-}
-
-td.dim_awake_time {
-	border: 1px;
- 	border-right-style: solid;
- 	border-right-color: #CCC;
-	background:#D0FFD0;
-}
-
-td.dim_time {
-	 border: 1px;
-	 border-right-style: solid;
-	 border-right-color: #CCC;
-	 /*background:;*/
-}
-
 input.djinput{
 	background: blue;
 }

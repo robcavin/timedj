@@ -2,6 +2,14 @@ class QueryController < ApplicationController
 
   auto_complete_for :city, :name
 
+  def ical_show
+    content = params[:content]
+    headers["Content-length"] = params[:content].length
+    headers["Content-Type"] = "text/calendar"
+    headers["Content-disposition"] = "attachment; filename=event.ics"
+    puts "Here"
+  end
+
   def index
      #@cities = City.find(:all)
      #@countries = Country.find(:all)   

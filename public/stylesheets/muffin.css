@@ -3,7 +3,8 @@
 	written by Stuart Colville http://www.muffinresearch.co.uk
 */
 
-table,td
+div.Muffin table,
+div.Muffin td
 {
 	border                :none;
 	/*border             : 1px solid #CCC;*/
@@ -12,14 +13,14 @@ table,td
 	font                 : small/1.1 Helvetica, sans-serif;
 	text-align	     	 : center;
 }
-table
+div.Muffin table
 {
  	border                :none;
 	border                :1px solid #CCC;
 }
-thead th,
-tbody th,
-tfoot th
+div.Muffin thead th,
+div.Muffin tbody th,
+div.Muffin tfoot th
 {
 	border                : 0px solid #CCC;
 	background            : #FFF ;	color                 : #666;  
@@ -29,8 +30,8 @@ tfoot th
 	min-width 	      	  : 100px;
 }
 
-tfoot tr,
-tfoot td	
+div.Muffin tfoot tr,
+div.Muffin tfoot td	
 {
 	padding               : 1px 1px;
   	color                 : #666;
@@ -38,7 +39,7 @@ tfoot td
 }
 
 
-tbody th
+div.Muffin tbody th
 {
   border                : 1px solid #ccc; 
   background            : #f1f1f2; /*#fafafb;*/
@@ -48,8 +49,8 @@ tbody th
   color					: black;
   /*padding				: 2px 2px;*/
 }
-tbody tr, 
-tbody td
+div.Muffin tbody tr, 
+div.Muffin tbody td
 {
 	padding               : 1px 1px;
   	color                 : #666;
@@ -58,29 +59,53 @@ tbody td
   	border-left 			: 1px solid #CCC;
 }
 
-tbody tr:hover td, 
-tfoot tr:hover td
+div.Muffin tbody tr:hover td, 
+div.Muffin tfoot tr:hover td
 {
   color                 : black; /*#454545;*/
   background            : #f48338 /*orange;*/
 }
 
-caption
+div.Muffin caption
 {
 	text-align            : left;
 	font-size             : 120%;
 	padding               : 10px 0;
 	color                 : #666;
 }
-table a:link
+div.Muffin table a:link
 {
 	color                 : #666;
 }
-table a:visited
+div.Muffin table a:visited
 {
 	color                 : #666;
 }
-table a:active
+div.Muffin table a:active
 {
 	color                 : #003366;
 }
+
+div.Muffin td.awake_time {
+	border: 1px;
+ 	border-right-style: solid;
+ 	border-right-color: #CCC;
+	background:lightgreen;
+	color: black;
+	font-weight:bold;
+}
+
+div.Muffin td.dim_awake_time {
+	border: 1px;
+ 	border-right-style: solid;
+ 	border-right-color: #CCC;
+	background:#D0FFD0;
+}
+
+div.Muffin td.dim_time {
+	 border: 1px;
+	 border-right-style: solid;
+	 border-right-color: #CCC;
+	 /*background:;*/
+}
+
