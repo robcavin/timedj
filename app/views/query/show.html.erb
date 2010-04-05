@@ -74,10 +74,7 @@ $(document).ready(function()
 
 <div class="ColContainer">
 
-<div class="LtCol">
-</div>	
-
-<div class="RtCol">
+<div class="LtCol" style="text-align:right">
     <div class="pane" style="">
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
 
@@ -88,7 +85,7 @@ $(document).ready(function()
 
 		Duration:
         <select id="meetingDuration" onChange='setDateFromDialog()'>
-            <% (1..9).each do |i| %><%= "<option value=#{i}>#{i/2}#{(i%2 != 0)?'.5':''} hours</option>" %><%end%>
+            <% (1..9).each do |i| %><%= "<option value=#{i}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
         </select><br>
 
         Meeting Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=6 value="">
@@ -97,6 +94,9 @@ $(document).ready(function()
         <div id="basicICal">
         </div>
     </div>
+</div>	
+
+<div class="RtCol">
 </div>
 
 <div class="CtrCol" id="CtrCol" style="margin-top:10px;">
