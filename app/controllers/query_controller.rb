@@ -7,7 +7,7 @@ class QueryController < ApplicationController
     headers["Content-length"] = params[:content].length
     headers["Content-Type"] = "text/calendar"
     headers["Content-disposition"] = "attachment; filename=event.ics"
-    puts "Here"
+    render :inline => "<%= '#{content}' %>"
   end
 
   def index

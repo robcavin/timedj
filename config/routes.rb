@@ -31,10 +31,10 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.resources :query, :collection => {:auto_complete_for_city_name => :get, :about_us => :get, :contact => :get}
+  map.resources :query, :collection => {:auto_complete_for_city_name => :get, :about_us => :get, :contact => :get, :ical_show => :get}
   map.root :controller => "query"
-
-  # See how all your routes lay out with "rake routes"
+  
+   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

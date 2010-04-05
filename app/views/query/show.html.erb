@@ -9,32 +9,31 @@
 <script type="text/javascript">
 $(document).ready(function() 
 { 
-$('#child *').tooltip();
-$("#timetable").tableHover({});
-$('#child *').click(function(event){
+//$('#child *').tooltip();
+//$("#timetable").tableHover({});
+//$('#child *').click(function(event){
 	
 /*alert("Feature coming soon...");*/
-})
+//})
 }); 	
 </script>
 <script type="text/javascript">
- 
-    //$(document).ready(function(){   
-    //    $("#button").click(function(){
-    //        $("#pane").style.display = 'show';
-    //        alert("E");
-    //    });        
-    //});
-        
-    function setDateFromDialog(date){
-        var starthour = $('#starthour').val()
+ 	
+    function setDateFromDialog(date, time){
+		if (time) document.getElementById('meetingTime').value = time;
+		if (date) document.getElementById('meetingDate').value = date
+		
+		time = document.getElementById('meetingTime').value
+		date = document.getElementById('meetingDate').value
+		
+		var starthour = document.getElementById('meetingTime').value
         var duration = $('#duration').val()
         
         mystarthour = (starthour) ? time : 12;
         myduration = (duration) ? duration : 90;
         
         var StartDate = new Date(date)
-        var EndDate = StartDate
+        var EndDate = new Date(StartDate)
         
         StartDate.setHours(mystarthour)
         EndDate.setHours(StartDate.getHours() + myduration / 60)
@@ -45,25 +44,34 @@ $('#child *').click(function(event){
             start: StartDate,
             end: EndDate,
             title: 'Your Meeting',
-            description: 'This Meeting was planned using The TimeDJ. Checkout timedj.com for more details',
-            location: 'On your local beach'
+            description: 'Scheduled via TimeDJ.com',
+            location: ''
         };
         
         $('#basicICal').icalendar($.extend({
             icons: '/images/icalendar.png',
 			compact: true,
-            sites: ['yahoo', 'google'] //, 'outlook'],
-            //echoUrl: "/iCalEcho.rb"
+            sites: ['yahoo', 'google', 'outlook'],
+            echoUrl: "/query/ical_show"
         }, TimeDJEvent))
         $('#basicICal').icalendar('change', TimeDJEvent);
     }
-    
+
     $(function(){
-        $('#dialogButton123').datepick({
-            onClose: setDateFromDialog
+        $('#meetingDate').datepick({
+            onClose: function(date){setDateFromDialog(date)}
         })
     });
+	
 </script>
+<%= "<script>" %>
+<%= "  $(function(){" %>
+<% (0..23).each do |i| %>
+<%="$('\#time_cell#{i}').datepick({onClose: function(date){ setDateFromDialog(date, #{i})} })" %>
+<%end %>
+<%="    });"%>
+<%= "</script>" %>
+			
 
 <div class="ColContainer">
 
@@ -72,7 +80,8 @@ $('#child *').click(function(event){
 
 <div class="RtCol"> 
        <div class="pane" style="">
-           Meeting date: <input class="Body" type="input" size=5 id="dialogButton123" value="">
+           Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>
+		   Meeting date: <input class="Body" type="text" readonly=1 id="meetingDate" size=6 value="">
            </input>
            <div id="basicICal">
            </div>
@@ -113,9 +122,9 @@ $('#child *').click(function(event){
 			end%>
 			<% am_pm = i < 12 ? "am" : "pm" %>
 			<%= if i==23 then "<tfoot>" end%>			
-			<%= "<tr id=child title=\"Coming Soon --> Click to Add to Calendar\" >" %>
+			<%= "<tr id=child#{i} title=\"Click to Add to Calendar\" >" %>
 			
-			<%= "<td class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
+			<%= "<td id='time_cell#{i}' class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
 			<%(1..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
@@ -128,9 +137,8 @@ $('#child *').click(function(event){
 		
 	   </tbody>
        </table>
-       </div>	   
+       </div>
        <!-- closing Muffin-->
-	   
 </div>
 
 </div>
