@@ -23,17 +23,16 @@ $(document).ready(function()
 		if (time) document.getElementById('meetingTime').value = time;
 		if (date) document.getElementById('meetingDate').value = date
 		
-		time = document.getElementById('meetingTime').value
-		date = document.getElementById('meetingDate').value
+		var starthour = document.getElementById('meetingTime').value;
+        var duration = (document.getElementById('meetingDuration').value * 60) / 2;
 		
-		var starthour = document.getElementById('meetingTime').value
-        var duration = $('#duration').val()
-        
-        mystarthour = (starthour) ? time : 12;
+		
+        mystarthour = (starthour) ? starthour : 12;
         myduration = (duration) ? duration : 90;
-        
-        var StartDate = new Date(date)
-        var EndDate = new Date(StartDate)
+
+	    var startdate = document.getElementById('meetingDate').value;    
+        var StartDate = (startdate) ? new Date(startdate) : new Date();
+        var EndDate = new Date(StartDate);
         
         StartDate.setHours(mystarthour)
         EndDate.setHours(StartDate.getHours() + myduration / 60)
@@ -78,14 +77,26 @@ $(document).ready(function()
 <div class="LtCol">
 </div>	
 
-<div class="RtCol"> 
-       <div class="pane" style="">
-           Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>
-		   Meeting date: <input class="Body" type="text" readonly=1 id="meetingDate" size=6 value="">
-           </input>
-           <div id="basicICal">
-           </div>
-       </div>
+<div class="RtCol">
+    <div class="pane" style="">
+        <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
+
+        Meeting Time: 
+        <select id="meetingTime" onChange='setDateFromDialog()'>
+            <% (0..23).each do |i| %><%= "<option value=#{i}>#{(i%12 == 0) ? 12 : i%12} #{(i >= 12) ? 'pm' : 'am'}</option>" %><%end %>
+        </select><br>
+
+		Duration:
+        <select id="meetingDuration" onChange='setDateFromDialog()'>
+            <% (1..9).each do |i| %><%= "<option value=#{i}>#{i/2}#{(i%2 != 0)?'.5':''} hours</option>" %><%end%>
+        </select><br>
+
+        Meeting Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=6 value="">
+        </input><br>
+
+        <div id="basicICal">
+        </div>
+    </div>
 </div>
 
 <div class="CtrCol" id="CtrCol" style="margin-top:10px;">
@@ -122,7 +133,7 @@ $(document).ready(function()
 			end%>
 			<% am_pm = i < 12 ? "am" : "pm" %>
 			<%= if i==23 then "<tfoot>" end%>			
-			<%= "<tr id=child#{i} title=\"Click to Add to Calendar\" >" %>
+			<%= "<tr id=child#{i} title=\"Click to set meeting time and date\" >" %>
 			
 			<%= "<td id='time_cell#{i}' class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
