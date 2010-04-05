@@ -74,11 +74,13 @@ $(document).ready(function()
 
 <div class="ColContainer">
 
-<div class="LtCol" style="text-align:right">
-    <div class="pane" style="">
+<div class="LtCol">
+    <div class="pane" style="text-align:right">
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
 
-        Meeting Time: 
+		<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
+
+        Time: 
         <select id="meetingTime" onChange='setDateFromDialog()'>
             <% (0..23).each do |i| %><%= "<option value=#{i}>#{(i%12 == 0) ? 12 : i%12} #{(i >= 12) ? 'pm' : 'am'}</option>" %><%end %>
         </select><br>
@@ -88,11 +90,14 @@ $(document).ready(function()
             <% (1..9).each do |i| %><%= "<option value=#{i}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
         </select><br>
 
-        Meeting Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=6 value="">
+        Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="">
         </input><br>
 
         <div id="basicICal">
         </div>
+		<br>
+
+		</div></div></div></div></div></div></div></div> 
     </div>
 </div>	
 
