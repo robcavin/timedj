@@ -25,8 +25,7 @@ $(document).ready(function()
 		
 		var starthour = document.getElementById('meetingTime').value;
         var duration = (document.getElementById('meetingDuration').value * 60) / 2;
-		
-		
+				
         mystarthour = (starthour) ? starthour : 12;
         myduration = (duration) ? duration : 90;
 
@@ -61,8 +60,13 @@ $(document).ready(function()
             onClose: function(date){setDateFromDialog(date)}
         })
     });
+
+	$(document).ready(function() {
+		setDateFromDialog();
+	});
 	
 </script>
+
 <%= "<script>" %>
 <%= "  $(function(){" %>
 <% (0..23).each do |i| %>
@@ -75,29 +79,32 @@ $(document).ready(function()
 <div class="ColContainer">
 
 <div class="LtCol">
-    <div class="pane" style="text-align:right">
+    <div class="pane" style="text-align:left">
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
-
 		<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
+		Click a table row or select date/time, then click on the calendar buttons to schedule your meeting!
+		<hr>
 
+	    <div class="pane" style="text-align:right">
         Time: 
         <select id="meetingTime" onChange='setDateFromDialog()'>
-            <% (0..23).each do |i| %><%= "<option value=#{i}>#{(i%12 == 0) ? 12 : i%12} #{(i >= 12) ? 'pm' : 'am'}</option>" %><%end %>
+            <% (0..23).each do |i| %><%= "<option value=#{i} #{(i==8) ? "selected=1" : ""}>#{(i%12 == 0) ? 12 : i%12} #{(i >= 12) ? 'pm' : 'am'}</option>" %><%end %>
         </select><br>
 
 		Duration:
         <select id="meetingDuration" onChange='setDateFromDialog()'>
-            <% (1..9).each do |i| %><%= "<option value=#{i}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
+            <% (1..9).each do |i| %><%= "<option value=#{i} #{(i==2) ? "selected=1" : ""}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
         </select><br>
 
-        Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="">
-        </input><br>
+        Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="<%="#{Date.today.mon}/#{Date.today.day}/#{Date.today.year}"%>">
+        </input><br><br>
 
-        <div id="basicICal">
+        <div id="basicICal" align='right' style="text-align:right">
         </div>
 		<br>
+	    </div>
 
-		</div></div></div></div></div></div></div></div> 
+		</div></div></div></div></div></div></div></div> <!-- This closes the box around the time/date/duration -->
     </div>
 </div>	
 

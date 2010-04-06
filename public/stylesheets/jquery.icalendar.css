@@ -53,10 +53,11 @@ html:first-child .icalendar_list {  /* Opera */
 .icalendar_compact li {
 	width: 16px;
 	height: 16px;
-	margin: 0px;
+	margin: 2px;
 	padding: 2px;
 	background-color: transparent;
 	border: none;
+	float: right;
 }
 .icalendar_list a {
 	width: 100%;
