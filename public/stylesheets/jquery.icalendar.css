@@ -48,7 +48,7 @@ html:first-child .icalendar_list {  /* Opera */
 }
 .icalendar_compact {
 	background-color: #eee;
-	border: 1px outset;
+	/*border: 1px outset;*/
 }
 .icalendar_compact li {
 	width: 16px;

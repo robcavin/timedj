@@ -2,10 +2,10 @@
 
 <div class="ColContainer">
 
-<div class="LtCol">
+<div class="LtCol" style="width:166px">
 </div>	
 
-<div class="RtCol"> 
+<div class="RtCol" style="width:166px"> 
 <div class="InfoBox">
 <div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
 Hate planning meetings across multiple time zones?<br><br>
@@ -14,7 +14,7 @@ Enter the location of each meeting participant and let TimeDJ.com suggest the be
 </div>
 </div>
 
-<div class="CtrCol"> 
+<div class="CtrCol" style="margin-left:180px; margin-right: 180px;"> 
 <%= form_tag(query_path(1),:method => :get)%>
 
 <%= text_field_with_auto_complete :city, :name, 

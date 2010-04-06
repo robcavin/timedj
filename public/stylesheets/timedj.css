@@ -5,7 +5,8 @@ html, body {
  font-size:14.5px;
  font: 100% helvetica,sans-serif;
  margin:0;
- padding:0;
+ padding:0; 
+ border:0;
 } 
 
 div.Menu {
@@ -24,9 +25,11 @@ div.Title {
 }
 
 div.ColContainer {
-	margin-left: 8px;
-	margin-right: 8px;
+	margin-left: auto;
+	margin-right: auto;
 	min-height: 300px;
+	max-width: 1024px;
+	min-width: 480px;
 }
 
 div.LtCol,
@@ -38,27 +41,28 @@ div.CtrCol {
 
 div.LtCol {
   float: left;
-  padding: 0px 10px 0px 0px;
-  width: 170px;
+  padding: 0px 10px 0px 4px;
+  width: 186px;
 }
 
 div.CtrCol {
   top: 10px;
   text-align: center;
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 div.RtCol {
   float: right;
-  padding: 0px 0px 0px 10px;
-  width: 170px;
+  padding: 0px 4px 0px 10px;
+  width: 186px;
 }
 
 div.Footer {
   bottom: 0%;
   width: 100%;
   margin-top: 30px;
+  padding-top: 10px;
   padding-bottom: 5px;
   text-align: center;
   clear: both;
@@ -119,3 +123,12 @@ div.InfoBox {
 .tl {background: url(/images/tpl_w.png) 0 0 no-repeat}
 .tr {background: url(/images/tpr_w.png) 100% 0 no-repeat; padding:10px; padding-left: 9%; padding-right: 6%} 
 
+div.CalendarPane h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 0px;
+}
+
+div.AdBox {
+	
+}

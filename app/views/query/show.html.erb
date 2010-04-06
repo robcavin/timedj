@@ -42,7 +42,7 @@ $(document).ready(function()
             start: StartDate,
             end: EndDate,
             title: 'Your Meeting',
-            description: 'Scheduled via TimeDJ.com',
+            description: '~This multiple time zone meeting was scheduled via TimeDJ.com~',
             location: ''
         };
         
@@ -79,12 +79,12 @@ $(document).ready(function()
 <div class="ColContainer">
 
 <div class="LtCol">
-    <div class="pane" style="text-align:left">
+    <div class="CalendarPane" style="text-align:left">
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
 		<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
-		Click a table row or select date/time, then click on the calendar buttons to schedule your meeting!
-		<hr>
-
+		<h4>Add to Calendar</h4>
+		Select the time that works best for all meeting particpants from the chart or enter the information below.
+		<h4>Meeting Details</h4>
 	    <div class="pane" style="text-align:right">
         Time: 
         <select id="meetingTime" onChange='setDateFromDialog()'>
@@ -97,9 +97,11 @@ $(document).ready(function()
         </select><br>
 
         Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="<%="#{Date.today.mon}/#{Date.today.day}/#{Date.today.year}"%>">
-        </input><br><br>
-
-        <div id="basicICal" align='right' style="text-align:right">
+        </input>
+		<span style="text-align:left"><h4>Select Your Calendar</h4></span>
+		<div class="ICalWrapper" style="text-align:center; margin-left:auto; margin-right:45px;">
+          <div id="basicICal" align='right' style="text-align:right">
+		</div>
         </div>
 		<br>
 	    </div>
@@ -109,6 +111,12 @@ $(document).ready(function()
 </div>	
 
 <div class="RtCol">
+<div class="AdBox">
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr" style="padding-left:6%">
+        Sponsored by
+        <SCRIPT type="text/javascript" LANGUAGE="javascript" src="http://www.qksz.net/1e-ilcz"> </SCRIPT>
+</div></div></div></div></div></div></div></div> 
+</div>
 </div>
 
 <div class="CtrCol" id="CtrCol" style="margin-top:10px;">
