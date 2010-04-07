@@ -19,7 +19,12 @@ $(document).ready(function()
 </script>
 <script type="text/javascript">
  	
-    function setDateFromDialog(date, time){
+    function setDateFromDialog(date, time, ptr){
+		
+		document.getElementById(ptr.id + '_test').style.visibility = "visible";
+
+		document.getElementById('test1').style.visibility = 'visible';
+		
 		if (time) document.getElementById('meetingTime').value = time;
 		if (date) document.getElementById('meetingDate').value = date
 		
@@ -46,13 +51,15 @@ $(document).ready(function()
             location: ''
         };
         
-        $('#basicICal').icalendar($.extend({
+		document.getElementById(ptr.id + '_test').style.visibility = "visible";
+		
+        $('#' + ptr.id + '_test').icalendar($.extend({
             icons: '/images/icalendar.png',
 			compact: true,
             sites: ['yahoo', 'google', 'outlook'],
             echoUrl: "/query/ical_show"
         }, TimeDJEvent))
-        $('#basicICal').icalendar('change', TimeDJEvent);
+        $('#' + ptr.id + '_test').icalendar('change', TimeDJEvent);
     }
 
     $(function(){
@@ -61,16 +68,16 @@ $(document).ready(function()
         })
     });
 
-	$(document).ready(function() {
-		setDateFromDialog();
-	});
+	//$(document).ready(function() {
+	//	setDateFromDialog();
+	//});
 	
 </script>
 
 <%= "<script>" %>
 <%= "  $(function(){" %>
 <% (0..23).each do |i| %>
-<%="$('\#time_cell#{i}').datepick({onClose: function(date){ setDateFromDialog(date, #{i})} })" %>
+<%="$('\#time_cell#{i}').datepick({onClose: function(date, foo, ptr){ setDateFromDialog(date, #{i}, ptr)} })" %>
 <%end %>
 <%="    });"%>
 <%= "</script>" %>
@@ -78,8 +85,13 @@ $(document).ready(function()
 
 <div class="ColContainer">
 
+<<<<<<< ours
 <div class="LtCol">
     <div class="CalendarPane" style="text-align:left">
+=======
+<div id="test1" class="LtCol" style="visibility:hidden">
+    <div class="pane" style="text-align:left" position="relative">
+>>>>>>> theirs
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
 		<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
 		<h4>Add to Calendar</h4>
@@ -93,7 +105,7 @@ $(document).ready(function()
 
 		Duration:
         <select id="meetingDuration" onChange='setDateFromDialog()'>
-            <% (1..9).each do |i| %><%= "<option value=#{i} #{(i==2) ? "selected=1" : ""}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
+            <% (1..9).each do |i| %><%= "<option value=#{i} #{(i==2) ? "selected=1" : ""}>#{i/1/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
         </select><br>
 
         Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="<%="#{Date.today.mon}/#{Date.today.day}/#{Date.today.year}"%>">
@@ -155,8 +167,9 @@ $(document).ready(function()
 			<%= if i==23 then "<tfoot>" end%>			
 			<%= "<tr id=child#{i} title=\"Click to set meeting time and date\" >" %>
 			
-			<%= "<td id='time_cell#{i}' class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
-			
+			<%= "<td id='time_cell#{i}' class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}"%>
+			<%= "<div class='' id='time_cell#{i}_test' style='float: left; position:relative; left:100px; zindex=100' > </div>" %>
+			<% "</td>" %>
 			<%(1..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
 				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
