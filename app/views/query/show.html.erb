@@ -79,9 +79,21 @@ $(document).ready(function()
 <div class="ColContainer">
 
 <div class="LtCol">
+<div class="AdBox">
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr" style="padding-left:6%">
+		Sponsored by <br><br>
+        <SCRIPT type="text/javascript" LANGUAGE="javascript" src="http://www.qksz.net/1e-ilcy"> </SCRIPT> <br><br>
+        <SCRIPT type="text/javascript" LANGUAGE="javascript" src="http://www.qksz.net/1e-im71"> </SCRIPT> <br><br>
+        <SCRIPT type="text/javascript" LANGUAGE="javascript" src="http://www.qksz.net/1e-im73"> </SCRIPT> <br><br>
+</div></div></div></div></div></div></div></div> 
+</div>
+</div>	
+
+<div class="RtCol">
     <div class="CalendarPane" style="text-align:left">
         <!--Meeting time: <input class="Body" type="text" readonly=1 id="meetingTime" size=6 value=""></input><br>-->
 		<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
+		<div style="height:465px">
 		<h4>Add to Calendar</h4>
 		Select the time that works best for all meeting particpants from the chart or enter the information below.
 		<h4>Meeting Details</h4>
@@ -105,18 +117,9 @@ $(document).ready(function()
         </div>
 		<br>
 	    </div>
-
+		</div>
 		</div></div></div></div></div></div></div></div> <!-- This closes the box around the time/date/duration -->
     </div>
-</div>	
-
-<div class="RtCol">
-<div class="AdBox">
-<div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr" style="padding-left:6%">
-        Sponsored by
-        <SCRIPT type="text/javascript" LANGUAGE="javascript" src="http://www.qksz.net/1e-ilcz"> </SCRIPT>
-</div></div></div></div></div></div></div></div> 
-</div>
 </div>
 
 <div class="CtrCol" id="CtrCol" style="margin-top:10px;">
@@ -153,9 +156,9 @@ $(document).ready(function()
 			end%>
 			<% am_pm = i < 12 ? "am" : "pm" %>
 			<%= if i==23 then "<tfoot>" end%>			
-			<%= "<tr id=child#{i} title=\"Click to set meeting time and date\" >" %>
+			<%= "<tr id=child#{i} >" %>
 			
-			<%= "<td id='time_cell#{i}' class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
+			<%= "<td id='time_cell#{i}' title=\"Click to set meeting time and date\" class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
 			<%(1..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
