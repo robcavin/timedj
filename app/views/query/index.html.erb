@@ -13,25 +13,28 @@ Enter the location of each meeting participant and let TimeDJ.com suggest the be
 </div></div></div></div></div></div></div></div> 
 </div>
 </div>
-
 <div class="CtrCol" style="margin-left:180px; margin-right: 180px;"> 
 <%= form_tag(query_path(1),:method => :get)%>
-
 <%= text_field_with_auto_complete :city, :name, 
-	{:tabindex => 0, :style => "width: 80%; max-width: 600px", :onkeypress => 'document.getElementById("test1").style.visibility = "visible"'}, {:tokens => [';','+'], :min_chars => '3', :method => :get, :order => 'population DESC'} %>
+	{:tabindex => 0, :style => "width: 80%; max-width: 600px"}, {:tokens => [';','+'], :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
 	<input  type="image" src="/images/dj_button2.png" alt="GO!" style="position:relative; left:5px; top:20px">
 <br>
 <span style="position: relative; left:-5%; color: #999999; z-index:-5;"> Type in the location of each meeting participant separated by a semicolon.
 <br>Example:  San Francisco, United States; Paris, France 
 </span>
-
-<div id='test1' style="visibility:hidden; width:400px; margin-left:auto; margin-right:auto" >
 <br><br>
+
+<div id='plswait' style="width:400px; margin-left:auto; margin-right:auto" >
 <div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
 Searching 2.5 million locations for your query...<br>
 Results will appear after typing 3 characters
 </div></div></div></div></div></div></div></div> 
 </div>
+<script type="text/javascript">
+//<![CDATA[
+Element.hide('plswait')
+//]]>
+</script>
 
 <% if flash[:error] %>
 <br><br>
