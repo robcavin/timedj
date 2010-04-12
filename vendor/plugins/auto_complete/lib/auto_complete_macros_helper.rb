@@ -99,7 +99,7 @@ module AutoCompleteMacrosHelper
     entries.each do |entry| 
       entry_list = (entry.class == String) ? entry : entry.send(method)
       entry_list.each do |sub_entry|
-        items.push(content_tag("li", phrase ? highlight(sub_entry, phrase) : h(sub_entry)))
+        items.push(content_tag("li", phrase ? highlight(sub_entry, phrase) : sub_entry)) # removed the h() around sub_entry to allow images
       end
     end
     

@@ -6,7 +6,7 @@ class City < ActiveRecord::Base
   # construct the full text you want to print out on an auto_complete
   # name, country, (time_zone)
   def full_descriptor
-    city_country_tz = self.utf8_name # we will search on the ascii name but display the UTF8 one
+    city_country_tz = "<img src='/images/flags/#{self.country.country_code.downcase}.png' /> #{self.utf8_name}" # we will search on the ascii name but display the UTF8 one
     
     # if city has a region mapped in the db, print it out
     city_country_tz += ", #{self.region.name}" if (self.region)

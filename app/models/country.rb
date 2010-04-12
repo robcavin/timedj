@@ -15,7 +15,7 @@ class Country < ActiveRecord::Base
           # we just have the timezone so find the city the greatest population for that timezone
           top_pop_city_w_time_zone = City.find(:all, :conditions => "cities.country_id = #{self.id} AND time_zone_id = #{city_i.time_zone_id}", :order => "population DESC", :limit => 1).first
           if (top_pop_city_w_time_zone)
-            thing_to_push = "#{top_pop_city_w_time_zone.utf8_name}, "
+            thing_to_push = "<img src='/images/flags/#{top_pop_city_w_time_zone.country.country_code.downcase}.png' /> #{top_pop_city_w_time_zone.utf8_name}, "
             thing_to_push += "#{top_pop_city_w_time_zone.region.name}, " if (top_pop_city_w_time_zone.region)
             thing_to_push += "#{self.name} (#{city_i.time_zone.name});"
             country_city_tz.push(thing_to_push)
