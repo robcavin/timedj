@@ -105,7 +105,7 @@ $(document).ready(function()
 
 		Duration:
         <select id="meetingDuration" onChange='setDateFromDialog()'>
-            <% (1..9).each do |i| %><%= "<option value=#{i} #{(i==2) ? "selected=1" : ""}>#{i/2}#{(i%2 != 0)?'.5':''} hr</option>" %><%end%>
+            <% (1..9).each do |i| %><%= "<option value=#{i} #{(i==2) ? "selected=1" : ""}>#{i*0.5} hr</option>" %><%end%>
         </select><br>
 
         Date: <input class="Body" type="text" readonly=1 id="meetingDate" size=8 value="<%="#{Date.today.mon}/#{Date.today.day}/#{Date.today.year}"%>">
@@ -128,6 +128,10 @@ $(document).ready(function()
         <table id="timetable" align="center">
 	    <thead>		
 	    <tr>
+	    <% if @needs_local_col then%>
+	        	<%= "<th> Local Time<BR>" %>
+	        	<%= "(#{@local_tz_name})</th>" %> 
+		<%end%>     
 		<%@myinputs.each do |i| %>
 	        	<%= "<th> #{i.utf8_name},<BR>"%>
 	        	<%= "#{i.country.name}<BR>" %>
@@ -160,7 +164,8 @@ $(document).ready(function()
 			
 			<%= "<td id='time_cell#{i}' title=\"Click to set meeting time and date\" class=\"#{(i <8|| i>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\"> #{(i%12 != 0) ? i%12 : 12}:00 #{am_pm}</td>"%>
 			
-			<%(1..(@myinputs.length-1)).each do |j|%>
+			<% first_city = @needs_local_col ? 0 : 1 %>
+			<%(first_city..(@myinputs.length-1)).each do |j|%>
 				<% tz_delta = i + @tzdeltas[j]%>
 				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
 				<%= "<td class=\"#{(tz_delta%24 <8 || tz_delta%24>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>

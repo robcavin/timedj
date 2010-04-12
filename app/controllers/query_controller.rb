@@ -159,8 +159,13 @@ class QueryController < ApplicationController
       end
 
       count = 0
+      noTimezoneID = []
+      
       @myinputs.each do |city|
+
         if (!city.time_zone) 
+          noTimezoneID[count] = true;
+
           # first check if we aleady the lat/long in our db
           if city.lat and city.long
             lat = city.lat
@@ -187,22 +192,50 @@ class QueryController < ApplicationController
             jResponse = JSON.parse response.body        
             timezoneId = jResponse['timezoneId']
           end
+          if timezoneId == ""
+            # either there wasn't data for this lat/long or the xml api is down, try the JSON one
+            url = URI.parse("http://www.earthtools.org/timezone/#{lat}/#{long}")
+            response = Net::HTTP.get_response(url)
+            doc = Nokogiri::XML(response.body)
+            timezoneOffset = doc.xpath("//timezone/offset").children.to_s
+          end
+          
           # check if we got any answer
           if !(timezoneId) or timezoneId == ""
-            # render an error page  
+            # render an error page
+            #if !timezoneOffset or timezoneOffset == "" then 
+              flash[:error] = "Shoot... it appears our affiliate site is down.  Please try your query again in a few minutes!<br>"
+              redirect_to :action => 'index' and return
+            #end
           else
             # Update the timezone in the db and update the active record object (else timezone still wont' be set below)
             @myinputs[count] = City.update(city, :time_zone => TimeZone.find(:first,:conditions => {:timezoneID => timezoneId}))
+            noTimezoneID[count] = false;
           end
         end        
         count += 1
       end
       
       @tzdeltas = []
+      local_offset = params[:local].split("_")[0].to_i
+      my_date = (Time.new.getgm + 3600*local_offset).to_s.split(/\s+/)
+      my_hr_min_sec = my_date[3].split(":")
+      datetime0 = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[1]), my_date[2].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
+      
+      # Verfiy the first entry is local time - if not, make a fake one
       my_date = `zdump #{@myinputs[0].time_zone.timezoneID}`.split(/\s+/)
       my_hr_min_sec = my_date[4].split(":")
-      datetime0 = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
+      my_datetime = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
+
+      puts my_datetime
+      puts datetime0
       
+      if (1) # For now, we decided to always have a local column #(my_datetime - datetime0).abs > 0.005)  # The math returns the difference in a fraction of a day.  If we're within 0.005 of a day, declare we've matched. 
+        @needs_local_col = true
+        @local_tz_name = params[:local].split("_")[1]
+        puts @myinputs[0].time_zone.offset
+      end
+
       @myinputs.each do |i|
         my_date = `zdump #{i.time_zone.timezoneID}`.split(/\s+/)
         my_hr_min_sec = my_date[4].split(":")
@@ -214,7 +247,7 @@ class QueryController < ApplicationController
       @min_good_hour = 8
       @max_good_hour = 17
       
-      @tzdeltas[1..(@tzdeltas.length-1)].each do |i|
+      @tzdeltas[0..(@tzdeltas.length-1)].each do |i|
         min_hour = (8 - i)%24
         if (min_hour > 17) then min_hour -= 24 end
         max_hour = (min_hour + 9)

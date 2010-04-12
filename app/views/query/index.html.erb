@@ -15,6 +15,7 @@ Enter the location of each meeting participant and let TimeDJ.com suggest the be
 </div>
 <div class="CtrCol" style="margin-left:180px; margin-right: 180px;"> 
 <%= form_tag(query_path(1),:method => :get)%>
+<INPUT TYPE=hidden NAME="local" id=hidden_time VALUE=""/>
 <%= text_field_with_auto_complete :city, :name, 
 	{:tabindex => 0, :style => "width: 80%; max-width: 600px"}, {:tokens => [';','+'], :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
 	<input  type="image" src="/images/dj_button2.png" alt="GO!" style="position:relative; left:5px; top:20px">
@@ -32,6 +33,8 @@ Please wait a moment as we search 2.5 million locations to auto complete your qu
 </div>
 <script type="text/javascript">
 //<![CDATA[
+var myDate = new Date();
+document.getElementById('hidden_time').value = myDate.getTimezoneOffset()/-60 + "_" + myDate.toTimeString().split('\(')[1].split('\)')[0];
 Element.hide('plswait')
 //]]>
 </script>
