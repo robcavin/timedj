@@ -97,7 +97,7 @@ module AutoCompleteMacrosHelper
     return unless entries
     items = []
     entries.each do |entry| 
-      entry_list = entry.send(method)
+      entry_list = (entry.class == String) ? entry : entry.send(method)
       entry_list.each do |sub_entry|
         items.push(content_tag("li", phrase ? highlight(sub_entry, phrase) : h(sub_entry)))
       end

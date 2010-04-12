@@ -73,7 +73,9 @@ module AutoComplete
 
        end        
        
-                
+       if (@items.length == 0) 
+         @items.push("Can't find a city or country that matches \"#{params[object][method]}\".  Please try again...")
+       end
         #render :inline => "<%= auto_complete_result @items, '#{method}' %>"
         render :inline => "<%= auto_complete_result @items, 'full_descriptor' %>"
       end
