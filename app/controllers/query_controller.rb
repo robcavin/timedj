@@ -217,7 +217,7 @@ class QueryController < ApplicationController
       end
       
       @tzdeltas = []
-      local_offset = params[:local].split("_")[0].to_i
+      local_offset = params[:local].to_f #.split("_")[0].to_i
       my_date = (Time.new.getgm + 3600*local_offset).to_s.split(/\s+/)
       my_hr_min_sec = my_date[3].split(":")
       datetime0 = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[1]), my_date[2].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
@@ -232,7 +232,7 @@ class QueryController < ApplicationController
       
       if (1) # For now, we decided to always have a local column #(my_datetime - datetime0).abs > 0.005)  # The math returns the difference in a fraction of a day.  If we're within 0.005 of a day, declare we've matched. 
         @needs_local_col = true
-        @local_tz_name = params[:local].split("_")[1]
+        @local_tz_name = "GMT#{params[:local]}"#params[:local].split("_")[1]
         puts @myinputs[0].time_zone.offset
       end
 

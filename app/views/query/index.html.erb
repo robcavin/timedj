@@ -33,8 +33,8 @@ Please wait a moment as we search 2.5 million locations to auto complete your qu
 </div>
 <script type="text/javascript">
 //<![CDATA[
-var myDate = new Date();
-document.getElementById('hidden_time').value = myDate.getTimezoneOffset()/-60 + "_" + myDate.toTimeString().split('\(')[1].split('\)')[0];
+myDate = new Date();
+document.getElementById('hidden_time').value = myDate.getTimezoneOffset()/-60; // + "_" + myDate.toTimeString().split('\(')[1].split('\)')[0];
 Element.hide('plswait')
 //]]>
 </script>
