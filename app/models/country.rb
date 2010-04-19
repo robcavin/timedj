@@ -17,7 +17,7 @@ class Country < ActiveRecord::Base
           if (top_pop_city_w_time_zone)
             thing_to_push = "<img src='/images/flags/#{top_pop_city_w_time_zone.country.country_code.downcase}.png' /> #{top_pop_city_w_time_zone.utf8_name}, "
             thing_to_push += "#{top_pop_city_w_time_zone.region.name}, " if (top_pop_city_w_time_zone.region)
-            thing_to_push += "#{self.name} (#{city_i.time_zone.name});"
+            thing_to_push += "#{self.name} (#{city_i.time_zone.name})"
             country_city_tz.push(thing_to_push)
             #country_city_tz.push("#{top_pop_city_w_time_zone.utf8_name}, #{top_pop_city_w_time_zone.region.name}, #{self.name} (#{city_i.time_zone.name})")
           end          

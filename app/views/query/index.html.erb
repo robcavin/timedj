@@ -6,23 +6,35 @@
 </div>	
 
 <div class="RtCol" style="width:166px"> 
-<div class="InfoBox">
+<!--<div class="InfoBox">
 <div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr">
 Hate planning meetings across multiple time zones?<br><br>
 Enter the location of each meeting participant and let TimeDJ.com suggest the best time for your meeting.
 </div></div></div></div></div></div></div></div> 
+</div>-->
 </div>
-</div>
+<br><br>
 <div class="CtrCol" style="margin-left:180px; margin-right: 180px;"> 
+<!--<span style="color: #999999; z-index:-5;"> Type in the location of each meeting participant separated by a semicolon.
+<br>Example:  San Francisco, United States; Paris, France 
+</span><br><br>-->
 <%= form_tag(query_path(1),:method => :get)%>
 <INPUT TYPE=hidden NAME="local" id=hidden_time VALUE=""/>
-<%= text_field_with_auto_complete :city, :name, 
-	{:tabindex => 0, :style => "width: 80%; max-width: 600px"}, {:tokens => [';','+'], :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
-	<input  type="image" src="/images/dj_button2.png" alt="GO!" style="position:relative; left:5px; top:20px">
+<span style="font-size:200%;font-family: cursive;font-style:italic"> What time is it in </span>
+<%= text_field_with_auto_complete :city, :name, '1',  
+	{:tabindex => 0, :style => "width: 80%; max-width: 400px", :value => "(type city or country here)", :onFocus => "this.select()"}, {:min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+<br> 
+<span style="font-size:200%;font-family: cursive;font-style:italic"> and </span> 
+<%= text_field_with_auto_complete :city, :name, '2',
+	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "this.select()"}, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+<span style="font-size:200%;font-family: cursive;font-style:italic"> and </span>
+<%= text_field_with_auto_complete :city, :name, '3',
+	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "this.select()"}, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+<span style="font-size:200%;font-family: cursive;font-style:italic"> ?</span>
 <br>
-<span style="position: relative; left:-5%; color: #999999; z-index:-5;"> Type in the location of each meeting participant separated by a semicolon.
-<br>Example:  San Francisco, United States; Paris, France 
-</span>
+<br>
+	<input  type="image" src="/images/dj_button_show_me.png" alt="GO!" style="position:relative; left:5px; top:20px">
+<br>
 <br><br>
 
 <div id='plswait' style="width:400px; margin-left:auto; margin-right:auto" >

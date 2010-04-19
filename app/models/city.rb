@@ -19,7 +19,7 @@ class City < ActiveRecord::Base
     
     # this is a bad hack to make sure the seperator value is include
     # need to figure out how auto-complete can append this once a selection is selected
-    city_country_tz += "; "
+    #city_country_tz += "; "
     
     # Return the array
     city_country_tz

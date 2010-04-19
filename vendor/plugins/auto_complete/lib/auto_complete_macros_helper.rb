@@ -27,7 +27,7 @@ module AutoCompleteMacrosHelper
   #                                  to 'fieldname=value'.
   # <tt>:frequency</tt>::            Determines the time to wait after the last keystroke
   #                                  for the AJAX request to be initiated.
-  # <tt>:indicator</tt>::            Specifhttp://script.aculo.us/demos/ajax/autocompleteries the DOM ID of an element which will be
+  # <tt>:indicator</tt>::            Specifies the DOM ID of an element which will be
   #                                  displayed while autocomplete is running.
   # <tt>:tokens</tt>::               A string or an array of strings containing
   #                                  separator tokens for tokenized incremental 
@@ -55,15 +55,15 @@ module AutoCompleteMacrosHelper
   #                                  the entire element is used.
   # <tt>:method</tt>::               Specifies the HTTP verb to use when the autocompletion
   #                                  request is made. Defaults to POST.
-  def auto_complete_field(field_id, options = {})
-    function =  "var #{field_id}_auto_completer = new Ajax.Autocompleter("
-    function << "'#{field_id}', "
-    function << "'" + (options[:update] || "#{field_id}_auto_complete") + "', "
+  def auto_complete_field(field_id, suffix, options = {})
+    function =  "var #{field_id}_auto_completer_#{suffix} = new Ajax.Autocompleter("
+    function << "'#{field_id}_#{suffix}', "
+    function << "'" + (options[:update] || "#{field_id}_auto_complete_#{suffix}") + "', "
     function << "'#{url_for(options[:url])}'"
     
     js_options = {}
     js_options[:tokens] = array_or_string_for_javascript(options[:tokens]) if options[:tokens]
-    js_options[:callback]   = "function(element, value) { return #{options[:with]} }" if options[:with]
+    js_options[:callback]   = "function(element, value) { return value.replace(/name_\\d+/,'name')}" #{options[:with]} }" if options[:with]
     js_options[:indicator]  = "'#{options[:indicator]}'" if options[:indicator]
     js_options[:select]     = "'#{options[:select]}'" if options[:select]
     js_options[:paramName]  = "'#{options[:param_name]}'" if options[:param_name]
@@ -96,6 +96,7 @@ module AutoCompleteMacrosHelper
   def auto_complete_result(entries, method, phrase = nil)
     return unless entries
     items = []
+    #if entries.length == 1 and entries[0].class == String and /^Can't/.match(entries[0]) then puts "look here foo foo\n"; return content_tag(:ul, content_tag(:li, entries[0])) end
     entries.each do |entry| 
       entry_list = (entry.class == String) ? entry : entry.send(method)
       entry_list.each do |sub_entry|
@@ -111,19 +112,20 @@ module AutoCompleteMacrosHelper
   # In your controller, you'll need to define an action called
   # auto_complete_for to respond the AJAX calls,
   # 
-  def text_field_with_auto_complete(object, method, tag_options = {}, completion_options = {})
+  def text_field_with_auto_complete(object, method, suffix, tag_options = {}, completion_options = {})
     (completion_options[:skip_style] ? "" : auto_complete_stylesheet) +
-    text_field(object, method, tag_options) +
-    content_tag("div", "", :id => "#{object}_#{method}_auto_complete", :class => "auto_complete") +
-    auto_complete_field("#{object}_#{method}", { :url => { :action => "auto_complete_for_#{object}_#{method}" } }.update(completion_options))
+    text_field(object, "#{method}_#{suffix}", tag_options) +
+    content_tag("div", "", :id => "#{object}_#{method}_auto_complete_#{suffix}", :class => "auto_complete") +
+    auto_complete_field("#{object}_#{method}", suffix, { :url => { :action => "auto_complete_for_#{object}_#{method}" } }.update(completion_options))
   end
 
   private
     def auto_complete_stylesheet
       content_tag('style', <<-EOT, :type => Mime::CSS)
         div.auto_complete {
+          width: 400px ! important;
+          z-index: 10;
           text-align: left;
-          width: 350px;
           background: #fff;
         }
         div.auto_complete ul {

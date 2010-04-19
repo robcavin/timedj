@@ -65,6 +65,26 @@ $(document).ready(function()
 		setDateFromDialog();
 	});
 	
+    function startTime(){
+		alert ("foo")
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('fooz1').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout('startTime()', 500);
+    }
+    
+    function checkTime(i){
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
 </script>
 
 <%= "<script>" %>
@@ -140,6 +160,10 @@ $(document).ready(function()
 	    </tr>
 	    </thead>
 	    <tbody>
+	    	<!--<tr>
+	    		<td id='fooz1'><script type="text/javascript"> start_time() </script></td>
+	    		<td id='fooz2'><script type="text/javascript"> </script></td>
+			</tr>-->
 
 		<%(0 .. 23).each do |i| %>
 			<%  if i== 0 then

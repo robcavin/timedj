@@ -93,9 +93,15 @@ class QueryController < ApplicationController
 'au'  => 'australia'
 }
 
-     temp = params[:city][:name].strip.downcase.split(/\s*[;+]+\s*/, -1)
-     temp.delete_if {|x| x == ""} # remove blank entries
-     
+    #temp = params[:city][:name].strip.downcase.split(/\s*[;+]+\s*/, -1)
+    #temp.delete_if {|x| x == ""} # remove blank entries
+    temp = []
+    (1..3).each do |i| 
+      this_city =  params[:city]["name_#{i}"]
+      this_city = this_city.strip.downcase.gsub(';','').gsub("(optional)","")
+      temp.push(this_city) if this_city != ""
+    end
+    
      # make sure the user didn't enter anything. n00b
      if !temp or temp == []
       flash[:error] = "Sorry, you need to enter at least one city or country.<br>"
