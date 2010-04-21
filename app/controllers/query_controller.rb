@@ -73,6 +73,7 @@ class QueryController < ApplicationController
   end
 
   def index
+    @query_title = "TimeDJ.com - Mixing Times Around The World"
      #@cities = City.find(:all)
      #@countries = Country.find(:all)   
   end
@@ -93,6 +94,9 @@ class QueryController < ApplicationController
      require 'json'
      require 'nokogiri'
      require 'date'
+     
+     # set the default title incase there is an error
+     @query_title = "TimeDJ.com - Mixing Times Around The World"
 
     #temp = params[:city][:name].strip.downcase.split(/\s*[;+]+\s*/, -1)
     #temp.delete_if {|x| x == ""} # remove blank entries
@@ -259,7 +263,16 @@ class QueryController < ApplicationController
         @max_good_hour = [max_hour, @max_good_hour].min;
       end
       #if @max_good_hour < @min_good_hour then @max_good_hour = 17 end
-        
+      
+      # create the dynamic title with all the cities names in it
+      temp_title = "TimeDJ.com - Time in "  
+      @myinputs.each do |i|
+        temp_title += "#{i.utf8_name} and "
+      end
+      # remove the trailing ' and '
+      temp_title = temp_title[0,(temp_title.length - 5)]
+      @query_title = temp_title
+
       # find and return a specific message
     end
     
