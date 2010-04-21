@@ -169,10 +169,10 @@ $(document).ready(function()
 	    	<tr>
 			<% first_city = @needs_local_col ? 0 : 1 %>
 			<% if  @needs_local_col then %>
-	    		<%= "<td id='cur_time_loc' style='font-weight:bold; color:black;'><script type='text/javascript'> startTime('cur_time_loc', 0) </script></td>" %>
+	    		<%= "<td id='cur_time_loc' style='font-weight:bold; color:black; padding-top:3px; padding-bottom:3px;'><script type='text/javascript'> startTime('cur_time_loc', 0) </script></td>" %>
 			<%end%>			
 			<%(first_city..(@myinputs.length-1)).each do |j|%>
-	    		<%= "<td id='cur_time_#{j}' style='font-weight:bold; color:black;'><script type='text/javascript'> startTime('cur_time_#{j}', #{@tzdeltas[j]} ) </script></td>" %>
+	    		<%= "<td id='cur_time_#{j}' style='font-weight:bold; color:black; padding-top:3px; padding-bottom:3px;'><script type='text/javascript'> startTime('cur_time_#{j}', #{@tzdeltas[j]} ) </script></td>" %>
 			<%end%>
 			</tr>
 
