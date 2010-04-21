@@ -62,8 +62,6 @@ class QueryController < ApplicationController
 }
 
 
-
-
   auto_complete_for :city, :name
 
   def ical_show
@@ -227,7 +225,7 @@ class QueryController < ApplicationController
       
       @tzdeltas = []
       local_offset = params[:local].to_f #.split("_")[0].to_i
-      my_date = (Time.new.getgm + 3600*local_offset).to_s.split(/\s+/)
+      my_date = (Time.new.getgm + 60*local_offset).to_s.split(/\s+/)
       my_hr_min_sec = my_date[3].split(":")
       datetime0 = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[1]), my_date[2].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
       
@@ -238,7 +236,7 @@ class QueryController < ApplicationController
       
       if (1) # For now, we decided to always have a local column #(my_datetime - datetime0).abs > 0.005)  # The math returns the difference in a fraction of a day.  If we're within 0.005 of a day, declare we've matched. 
         @needs_local_col = true
-        @local_tz_name = "GMT#{params[:local]}"#params[:local].split("_")[1]
+        @local_tz_name = "GMT#{params[:local].to_f/60.0}"#params[:local].split("_")[1]
       end
 
       @myinputs.each do |i|
@@ -246,15 +244,15 @@ class QueryController < ApplicationController
         my_hr_min_sec = my_date[4].split(":")
         my_datetime = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
         hours,minutes,seconds = Date.day_fraction_to_time(my_datetime - datetime0)
-        #@tzdeltas.push(hours + (minutes / 60.0))
-        @tzdeltas.push(hours)
+        @tzdeltas.push((my_datetime - datetime0) * 1440)
+        #@tzdeltas.push(hours)
       end
       
       @min_good_hour = 8
       @max_good_hour = 17
       
       @tzdeltas[0..(@tzdeltas.length-1)].each do |i|
-        min_hour = (8 - i)%24
+        min_hour = (8 - (i/60).ceil)%24
         if (min_hour > 17) then min_hour -= 24 end
         max_hour = (min_hour + 9)
         @min_good_hour = [min_hour, @min_good_hour].max;

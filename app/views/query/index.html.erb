@@ -46,7 +46,7 @@ Please wait a moment as we search 2.5 million locations to auto complete your qu
 <script type="text/javascript">
 //<![CDATA[
 myDate = new Date();
-document.getElementById('hidden_time').value = myDate.getTimezoneOffset()/-60; // + "_" + myDate.toTimeString().split('\(')[1].split('\)')[0];
+document.getElementById('hidden_time').value = -myDate.getTimezoneOffset(); // + "_" + myDate.toTimeString().split('\(')[1].split('\)')[0];
 Element.hide('plswait')
 //]]>
 </script>

@@ -67,8 +67,10 @@ $(document).ready(function()
 	
     function startTime(id, offset){
         var today = new Date();
-        var h = (today.getHours() + offset) % 24;
-        var m = today.getMinutes();
+		var offset_h = Math.floor(offset/60);
+		var offset_m = offset % 60
+        var h = (today.getHours() + offset_h) % 24;
+        var m = (today.getMinutes() + offset_m);  if (m > 60) {h += 1; m = m % 60;}
         var s = today.getSeconds();
 		var am_pm = "am"
         // add a zero in front of numbers<10
@@ -199,9 +201,10 @@ $(document).ready(function()
 			
 			<% first_city = @needs_local_col ? 0 : 1 %>
 			<%(first_city..(@myinputs.length-1)).each do |j|%>
-				<% tz_delta = i + @tzdeltas[j]%>
-				<% am_pm = tz_delta%24 < 12 ? "am" : "pm" %>
-				<%= "<td class=\"#{(tz_delta%24 <8 || tz_delta%24>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta%12 != 0) ? tz_delta%12 : 12}:00 #{am_pm}</td>"%>
+				<% tz_delta_h = i + (@tzdeltas[j] / 60).floor%>
+				<% tz_delta_m = (@tzdeltas[j]%60 == 0) ? "00" : @tzdeltas[j]%60%>
+				<% am_pm = tz_delta_h%24 < 12 ? "am" : "pm" %>
+				<%= "<td class=\"#{(tz_delta_h%24 <8 || tz_delta_h%24>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta_h%12 != 0) ? tz_delta_h%12 : 12}:#{tz_delta_m} #{am_pm}</td>"%>
 			<%end%>
 			<%= "</tr>" %>
 			<%= if i==23 then "</tfoot>" end%>
