@@ -66,19 +66,19 @@ $(document).ready(function()
 	});
 	
     function startTime(id, offset){
-        var today = new Date();
-		var offset_h = Math.floor(offset/60);
-		var offset_m = offset % 60
-        var h = (today.getHours() + offset_h) % 24;
-        var m = (today.getMinutes() + offset_m);  if (m > 60) {h += 1; m = m % 60;}
+        var temp_today = new Date().getTime();
+		temp_today = temp_today + (offset*60000);
+		today = new Date(temp_today);
+        var h = today.getHours(); 
+        var m = today.getMinutes(); 
         var s = today.getSeconds();
 		var am_pm = "am"
         // add a zero in front of numbers<10
         m = checkTime(m);
         s = checkTime(s);
-		if (h > 11) {if (h > 12) h = h-12; am_pm = "pm";}
+		if (h > 11) {if (h > 12) h = (h-12); am_pm = "pm";}
+		if (h == 0) h = 12;
         document.getElementById(id).innerHTML = h + ":" + m + ":" + s + " " + am_pm;
-        //id.innerHTML = h + ":" + m + ":" + s;
 		t = setTimeout('startTime("'+id+'",'+offset+')', 500);
     }
     

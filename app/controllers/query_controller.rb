@@ -256,7 +256,7 @@ class QueryController < ApplicationController
       @max_good_hour = 17
       
       @tzdeltas[0..(@tzdeltas.length-1)].each do |i|
-        min_hour = (8 - (i/60).ceil)%24
+        min_hour = (8 - (i/60).floor)%24
         if (min_hour > 17) then min_hour -= 24 end
         max_hour = (min_hour + 9)
         @min_good_hour = [min_hour, @min_good_hour].max;
