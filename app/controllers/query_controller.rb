@@ -1,38 +1,6 @@
 class QueryController < ApplicationController
 
-  auto_complete_for :city, :name
-
-  def ical_show
-    content = params[:content]
-    headers["Content-length"] = params[:content].length
-    headers["Content-Type"] = "text/calendar"
-    headers["Content-disposition"] = "attachment; filename=event.ics"
-    render :inline => "<%= '#{content}' %>"
-  end
-
-  def index
-     #@cities = City.find(:all)
-     #@countries = Country.find(:all)   
-  end
-
-    # GET new_message_url
-    def new
-      # return an HTML form for describing a new message
-    end
-
-    # POST messages_url
-    def create
-      # create a new message
-    end
-
-    # GET message_url(:id => 1)
-    def show
-     require 'net/http'
-     require 'json'
-     require 'nokogiri'
-     require 'date'
-    
-    abbrev_to_region = {
+    Abbrev_to_region = {
 'al' => 'alabama',
 'ak' => 'alaska',
 'az' => 'arizona',
@@ -85,13 +53,48 @@ class QueryController < ApplicationController
 'wi' => 'wisconsin',
 'wy' => 'wyoming' }
 
-    abbrev_to_country = {
+    Abbrev_to_country = {
 'us'  => 'united states',
 'usa'  => 'united states',
 'uk'  => 'united kingdom',
 'uae' => 'united arab emirates',
 'au'  => 'australia'
 }
+
+
+
+
+  auto_complete_for :city, :name
+
+  def ical_show
+    content = params[:content]
+    headers["Content-length"] = params[:content].length
+    headers["Content-Type"] = "text/calendar"
+    headers["Content-disposition"] = "attachment; filename=event.ics"
+    render :inline => "<%= '#{content}' %>"
+  end
+
+  def index
+     #@cities = City.find(:all)
+     #@countries = Country.find(:all)   
+  end
+
+    # GET new_message_url
+    def new
+      # return an HTML form for describing a new message
+    end
+
+    # POST messages_url
+    def create
+      # create a new message
+    end
+
+    # GET message_url(:id => 1)
+    def show
+     require 'net/http'
+     require 'json'
+     require 'nokogiri'
+     require 'date'
 
     #temp = params[:city][:name].strip.downcase.split(/\s*[;+]+\s*/, -1)
     #temp.delete_if {|x| x == ""} # remove blank entries
@@ -121,12 +124,12 @@ class QueryController < ApplicationController
         case my_params.size
           when 3
             city = my_params[0]
-            region = abbrev_to_region[my_params[1].strip] || my_params[1]
-            country = abbrev_to_country[my_params[2].strip] || my_params[2]
+            region = Abbrev_to_region[my_params[1].strip] || my_params[1]
+            country = Abbrev_to_country[my_params[2].strip] || my_params[2]
           when 2
             city = my_params[0]
             region = nil
-            country = abbrev_to_country[my_params[1].strip] || my_params[1]
+            country = Abbrev_to_country[my_params[1].strip] || my_params[1]
             ordering = "population DESC"
           when 1
             city = my_params[0]
@@ -145,7 +148,7 @@ class QueryController < ApplicationController
         # This should be much more elegant... 
         if !city && my_params.size == 2
           city = my_params[0]
-          region = abbrev_to_region[my_params[1].strip] || my_params[1]
+          region = Abbrev_to_region[my_params[1].strip] || my_params[1]
           country = nil
           ordering = "population DESC"
           lookup_params = {}
@@ -232,14 +235,10 @@ class QueryController < ApplicationController
       my_date = `zdump #{@myinputs[0].time_zone.timezoneID}`.split(/\s+/)
       my_hr_min_sec = my_date[4].split(":")
       my_datetime = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
-
-      puts my_datetime
-      puts datetime0
       
       if (1) # For now, we decided to always have a local column #(my_datetime - datetime0).abs > 0.005)  # The math returns the difference in a fraction of a day.  If we're within 0.005 of a day, declare we've matched. 
         @needs_local_col = true
         @local_tz_name = "GMT#{params[:local]}"#params[:local].split("_")[1]
-        puts @myinputs[0].time_zone.offset
       end
 
       @myinputs.each do |i|
@@ -247,7 +246,8 @@ class QueryController < ApplicationController
         my_hr_min_sec = my_date[4].split(":")
         my_datetime = DateTime.new(my_date[5].to_i, Date::ABBR_MONTHNAMES.index(my_date[2]), my_date[3].to_i, my_hr_min_sec[0].to_i, my_hr_min_sec[1].to_i, my_hr_min_sec[2].to_i)
         hours,minutes,seconds = Date.day_fraction_to_time(my_datetime - datetime0)
-        @tzdeltas.push(hours) 
+        #@tzdeltas.push(hours + (minutes / 60.0))
+        @tzdeltas.push(hours)
       end
       
       @min_good_hour = 8
