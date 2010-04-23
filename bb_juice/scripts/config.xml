@@ -158,5 +158,9 @@
 
   <!-- Exclude URLs within UNIX-style hidden files or directories       -->
   <filter  action="drop"  type="regexp"    pattern="/\.[^/]*"     />
+  
+  <!-- exclude stuff google doesn't need to see -->
+  <filter  action="drop"  type="regexp"    pattern="gclid="     />
+  <filter  action="drop"  type="regexp"    pattern="auto_complete_for"     />
 
 </site>
