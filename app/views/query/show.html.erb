@@ -205,9 +205,8 @@ $(document).ready(function()
 				<% tz_delta_m = (@tzdeltas[j]%60 == 0) ? "00" : @tzdeltas[j]%60%>
 				<% am_pm = tz_delta_h%24 < 12 ? "am" : "pm" %>
 				<%= "<td class=\"#{(tz_delta_h%24 <8 || tz_delta_h%24>17) ? "dim_time" : ((i < @min_good_hour || i > @max_good_hour) ? "dim_awake_time" : "awake_time")}\">#{(tz_delta_h%12 != 0) ? tz_delta_h%12 : 12}:#{tz_delta_m} #{am_pm}"%>
-				<%= "+1 day" if ((tz_delta_h%24 == 0) and (tz_delta_h > 0)) %>
-				<%= "-1 day" if ((i == 0) and (tz_delta_h < 0)) %>
-				<%= "today" if (tz_delta_h == 0) %>
+				<%= "-" if (tz_delta_h < 0) %>
+				<%= "+" if (tz_delta_h >= 24) %>
 				<%= "</td>" %>
 			<%end%>
 			<%= "</tr>" %>
