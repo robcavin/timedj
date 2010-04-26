@@ -22,14 +22,14 @@ Enter the location of each meeting participant and let TimeDJ.com suggest the be
 <INPUT TYPE=hidden NAME="local" id=hidden_time VALUE=""/>
 <span style="font-size:200%;font-family: cursive;font-style:italic"> What time is it in </span>
 <%= text_field_with_auto_complete :city, :name, '1',  
-	{:tabindex => 0, :style => "width: 80%; max-width: 400px", :value => "(type city or country here)", :onFocus => "this.select()"}, {:min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+	{:tabindex => 0, :style => "width: 80%; max-width: 400px", :value => "(type city or country here)", :onFocus => "if (this.value == '(type city or country here)') {this.value = '';}"}, {:min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
 <br> 
 <span style="font-size:200%;font-family: cursive;font-style:italic"> and </span> 
 <%= text_field_with_auto_complete :city, :name, '2',
-	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "this.select()"}, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "if (this.value == '(optional)') {this.value = '';}" }, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
 <span style="font-size:200%;font-family: cursive;font-style:italic"> and </span>
 <%= text_field_with_auto_complete :city, :name, '3',
-	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "this.select()"}, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
+	{:tabindex => 0, :style => "width: 80%; max-width: 200px", :value => "(optional)", :onFocus => "if (this.value == '(optional)') {this.value = '';}"}, {:skip_style => 1, :min_chars => '3', :method => :get, :order => 'population DESC', :frequency => 0.2, :indicator => 'plswait'} %>
 <span style="font-size:200%;font-family: cursive;font-style:italic"> ?</span>
 <br>
 <br>
