@@ -109,3 +109,8 @@ div.Muffin td.dim_time {
 	 /*background:;*/
 }
 
+div.Muffin .legend {
+	color                 : #666;
+	font                 : small/1.1 Helvetica, sans-serif;
+}
+
